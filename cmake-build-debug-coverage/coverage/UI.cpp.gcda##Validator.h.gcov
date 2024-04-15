@@ -1,0 +1,81 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Validator.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include <utility>
+        -:    4:#include <vector>
+        -:    5:#include <string>
+        -:    6:
+        -:    7:using std::string;
+        -:    8:using std::vector;
+        -:    9:
+        -:   10:class ValidationException{
+        -:   11:    vector<string> errorMsg;
+        -:   12:public:
+        -:   13:    explicit ValidationException(vector<string> errorMessages): errorMsg{std::move(errorMessages)}{};
+        -:   14:
+function _ZN19ValidationException16getErrorMessagesB5cxx11Ev called 1 returned 100% blocks executed 72%
+        1:   15:    string getErrorMessages(){
+        1:   16:        string fullMsg;
+        1:   16-block  0
+call    0 returned 1
+        2:   17:        for(const string& e:errorMsg)
+call    0 returned 1
+call    1 returned 1
+        1:   17-block  0
+call    2 returned 1
+        2:   17-block  1
+call    3 returned 2
+branch  4 taken 1
+branch  5 taken 1 (fallthrough)
+        -:   18:        {
+        1:   19:            fullMsg+=e+"\n";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   19-block  1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:   19-block  2
+call    8 never executed
+    $$$$$:   19-block  3
+        -:   20:        }
+        1:   21:        return fullMsg;}
+        1:   21-block  0
+        1:   21-block  1
+    $$$$$:   21-block  2
+call    0 never executed
+        -:   22:};
+        -:   23:
+        -:   24:/*
+        -:   25: * Clasa pentru validarea masinilor
+        -:   26: * O masina este valida daca:
+        -:   27: *  are un numar de inmatriculare format din cel putin 6 caractere si cel mult 8 caractere
+        -:   28: *  producatorul are mai mult de 2 caractere
+        -:   29: *  modelul nu este vid
+        -:   30: *  tipul nu este vid
+        -:   31: */
+        -:   32:class Validator{
+        -:   33:public:
+        -:   34:    static void valideaza_masina(const Car& c)
+        -:   35:    {
+        -:   36:        vector<string> errors;
+        -:   37:        if(c.get_nr_inmatriculare().size() < 6 || c.get_nr_inmatriculare().size() > 8)
+        -:   38:            errors.emplace_back("Numarul de inmatriculare este invalid!");
+        -:   39:        if(c.get_producator().size() <= 2)
+        -:   40:            errors.emplace_back("Producator invalid!");
+        -:   41:        if(c.get_model().empty())
+        -:   42:            errors.emplace_back("Modelul nu poate sa fie vid!");
+        -:   43:        if(c.get_tip().empty())
+        -:   44:            errors.emplace_back("Tipul masinii nu poate sa fie vid!");
+        -:   45:
+        -:   46:        if(!errors.empty())
+        -:   47:            throw ValidationException(errors);
+        -:   48:    }
+        -:   49:};

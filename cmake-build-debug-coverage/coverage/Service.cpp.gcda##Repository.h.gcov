@@ -1,0 +1,190 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Repository.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include "VectorDinamicTemplate.h"
+        -:    4:#include <utility>
+        -:    5:#include <vector>
+        -:    6:#include <map>
+        -:    7:#include <string>
+        -:    8:
+        -:    9:using std::vector;
+        -:   10:using std::map;
+        -:   11:
+        -:   12:class RepositoryException{
+        -:   13:private:
+        -:   14:    string errorMsg;
+        -:   15:public:
+function _ZN19RepositoryExceptionC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   16:    explicit RepositoryException(string errorMsg): errorMsg{std::move(errorMsg)}{};
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+        -:   17:    string getErrorMessage(){
+        -:   18:        return this->errorMsg;
+        -:   19:    }
+        -:   20:};
+        -:   21:
+        -:   22:
+        -:   23:class AbstractRepo{
+        -:   24:public:
+        -:   25:
+        -:   26:    virtual void store(const Car& c)=0;
+        -:   27:
+        -:   28:    virtual const Car& find(const string& nr_i)=0;
+        -:   29:
+        -:   30:    virtual bool exists(const Car& c)=0;
+        -:   31:
+        -:   32:    virtual int cauta_indice(const string& nr_i)=0;
+        -:   33:
+        -:   34:    virtual int deleteCar(const string& nr_i)=0;
+        -:   35:
+        -:   36:    virtual int modifyPlateNumber(const string& nr_i, const string& new_nr_i)=0;
+        -:   37:
+        -:   38:    virtual vector<Car> getAllCars() const=0;
+        -:   39:
+        -:   40:    // destructor virtual
+function _ZN12AbstractRepoD2Ev called 0 returned 0% blocks executed 0%
+    #####:   41:    virtual ~AbstractRepo()=default;
+        -:   42:};
+        -:   43:
+        -:   44:
+        -:   45:class LabRepo:public AbstractRepo{
+        -:   46:private:
+        -:   47:    double probabilitate;
+        -:   48:    map<string,Car> allCars; // cheia=producatorul masinii, valoarea=obiectul de tip Car
+        -:   49:public:
+        -:   50:    LabRepo()=default;
+        -:   51:
+        -:   52:    LabRepo(double p):probabilitate{p}{};
+        -:   53:
+        -:   54:    // returneaza probabilitatea
+        -:   55:    float get_probabilitate() const;
+        -:   56:
+        -:   57:    // verifica daca o functie va arunca sau nu exceptie
+        -:   58:    // returneaza 1 daca in urma generarii random arunca exceptie, 0 in caz contrar
+        -:   59:    int arunca_exceptie();
+        -:   60:
+        -:   61:    void store(const Car& c);
+        -:   62:
+        -:   63:    const Car& find(const string& nr_i);
+        -:   64:
+        -:   65:    bool exists(const Car& c);
+        -:   66:
+        -:   67:    int cauta_indice(const string& nr_i);
+        -:   68:
+        -:   69:    int deleteCar(const string& nr_i);
+        -:   70:
+        -:   71:    int modifyPlateNumber(const string& nr_i, const string& new_nr_i);
+        -:   72:
+        -:   73:    vector<Car> getAllCars() const override;
+        -:   74:
+        -:   75:};
+        -:   76:
+        -:   77:
+        -:   78:class Repository: public AbstractRepo {
+        -:   79:    vector<Car> allCars;
+        -:   80:    //VectorDinamic<Car> allCars;
+        -:   81:
+        -:   82:public:
+        -:   83:    // Constructor
+function _ZN10RepositoryC1Ev called 0 returned 0% blocks executed 0%
+    #####:   84:    Repository() = default;
+    %%%%%:   84-block  0
+call    0 never executed
+call    1 never executed
+        -:   85:
+        -:   86:
+        -:   87:    /*
+        -:   88:     * Constructor de copiere
+        -:   89:     * -nu permitem copiere Repository
+        -:   90:     */
+        -:   91:    Repository(const Repository& ot) = delete;
+        -:   92:
+        -:   93:    /*
+        -:   94:     * Adauga o masina in lista
+        -:   95:     * @param c: masina care se adauga (Car)
+        -:   96:     * @return: -
+        -:   97:     *
+        -:   98:     * @throws: RepoException daca o masina cu acelasi numar de inmatriculare exista deja
+        -:   99:     */
+        -:  100:    virtual void store(const Car& c);
+        -:  101:
+        -:  102:    /*
+        -:  103:     * Returneaza o lista cu toate masinile
+        -:  104:     * @return: lista cu masinile (vector of Car objects)
+        -:  105:     */
+        -:  106:    [[nodiscard]] vector<Car> getAllCars() const;
+        -:  107:
+        -:  108:    /*
+        -:  109:     * Cauta o masina cu numarul de inmatriculare dat
+        -:  110:     *
+        -:  111:     * @param nr_i: numarul de inmatriculare dupa care se cauta
+        -:  112:     * @returns: entitatea Car cu numarul de inmatriculare dat (daca acesta exista)
+        -:  113:     * @throws: RepoException daca nu exista o masina cu numarul de inmatriculare dat
+        -:  114:     */
+        -:  115:    const Car& find(const string& nr_i);
+        -:  116:
+        -:  117:    /*
+        -:  118:     * Verifica daca o masina data exista in lista
+        -:  119:     *
+        -:  120:     * @param c: masina care se cauta in lista de masini
+        -:  121:     * @return: true daca melodia exista, false altfe;
+        -:  122:     */
+        -:  123:    bool exists(const Car& c);
+        -:  124:
+        -:  125:    /*
+        -:  126:     * Cauta pozitia pe care se afla masina cu numarul de inmatriculare dat
+        -:  127:     *
+        -:  128:     * @return: pozitia pe care se afla, -1 daca nu exista
+        -:  129:     */
+        -:  130:    int cauta_indice(const string& nr_i);
+        -:  131:
+        -:  132:    /*
+        -:  133:     * Sterge elementul cu numarul de inmatriculare dat
+        -:  134:     *
+        -:  135:     * @return: 1 daca masina a fost stearsa cu succes
+        -:  136:     * @throws: RepositoryException daca nu exista
+        -:  137:     */
+        -:  138:    virtual int deleteCar(const string& nr_i);
+        -:  139:
+        -:  140:    /*
+        -:  141:     * Modifica numarul de inmatriculare al unei masini
+        -:  142:     *
+        -:  143:     * @return: 1 daca masina a fost modificata cu succes
+        -:  144:     *
+        -:  145:     * @throws: RepositoryException daca nu exista o masina cu numarul de inmatriculare dat
+        -:  146:     */
+        -:  147:    int modifyPlateNumber(const string& nr_i, const string& new_nr_i);
+        -:  148:
+        -:  149:};
+        -:  150:
+        -:  151:
+        -:  152:class FileRepository:public Repository{
+        -:  153:private:
+        -:  154:    string fName; // nume fisier
+        -:  155:    void loadFromFile();
+        -:  156:    void writeToFile();
+        -:  157:public:
+        -:  158:    FileRepository(string fName):Repository(), fName{std::move(fName)}
+        -:  159:    {
+        -:  160:        loadFromFile(); // incarcam datele din fisier
+        -:  161:    }
+        -:  162:
+        -:  163:
+        -:  164:    void store(const Car& c) override{
+        -:  165:        Repository::store(c);
+        -:  166:        writeToFile();
+        -:  167:    }
+        -:  168:
+        -:  169:    int deleteCar(const string &nr_i) override{
+        -:  170:        Repository::deleteCar(nr_i);
+        -:  171:        writeToFile();
+        -:  172:        return 1;
+        -:  173:    }
+        -:  174:
+        -:  175:};
+        -:  176:
+        -:  177:void testeRepo();

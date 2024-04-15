@@ -1,0 +1,2401 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Repository.cpp
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Repository.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Repository.h"
+        -:    2:#include <assert.h>
+        -:    3:#include <algorithm>
+        -:    4:#include <fstream>
+        -:    5:#include <random>
+        -:    6:
+        -:    7:
+function _ZN10Repository12cauta_indiceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 16 returned 100% blocks executed 100%
+       16:    8:int Repository::cauta_indice(const string &nr_i) {
+       36:    9:    for(int i=0; i<this->allCars.size();i++)
+       16:    9-block  0
+       20:    9-block  1
+       36:    9-block  2
+call    0 returned 36
+branch  1 taken 33
+branch  2 taken 3 (fallthrough)
+        -:   10:    {
+       33:   11:        if(allCars[i].get_nr_inmatriculare() == nr_i)
+       33:   11-block  0
+call    0 returned 33
+call    1 returned 33
+call    2 returned 33
+call    3 returned 33
+branch  4 taken 13 (fallthrough)
+branch  5 taken 20
+       13:   12:            return i;
+       13:   12-block  0
+        -:   13:    }
+        3:   14:    return -1;
+        3:   14-block  0
+        -:   15:}
+        -:   16:
+function _ZN10Repository9deleteCarERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 10 returned 90% blocks executed 70%
+       10:   17:int Repository::deleteCar(const string &nr_i) {
+       10:   18:    int poz = cauta_indice(nr_i);
+       10:   18-block  0
+call    0 returned 10
+       10:   19:    if(poz == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 9
+        1:   20:        throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   20-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   20-block  2
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   20-block  3
+call   11 never executed
+    $$$$$:   20-block  4
+    $$$$$:   20-block  5
+call   12 never executed
+        -:   21:    //this->allCars.erase(poz);
+        9:   22:    this->allCars.erase(allCars.begin()+poz);
+        9:   22-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   22-block  1
+    $$$$$:   22-block  2
+        -:   23:
+        9:   24:    return 1;
+        9:   24-block  0
+        9:   24-block  1
+        -:   25:}
+        -:   26:
+function _ZN10Repository17modifyPlateNumberERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 4 returned 75% blocks executed 67%
+        4:   27:int Repository::modifyPlateNumber(const string &nr_i, const string &new_nr_i) {
+        4:   28:    int poz = cauta_indice(nr_i);
+        4:   28-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   29:    if(poz == -1)
+        4:   29-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:   30:        throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   30-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   30-block  2
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   30-block  3
+call   11 never executed
+    $$$$$:   30-block  4
+    $$$$$:   30-block  5
+call   12 never executed
+        3:   31:    Car c = find(nr_i);
+        3:   31-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   31-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   32:    c.set_nr_inmatriculare(new_nr_i);
+        3:   32-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   32-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   32-block  2
+call    6 returned 3
+    $$$$$:   32-block  3
+call    7 never executed
+    $$$$$:   32-block  4
+        -:   33:    //this->allCars.set(c,poz);
+        3:   34:    this->allCars[poz] = c;
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   35:    return 1;
+        3:   35-block  0
+        3:   36:}
+        3:   36-block  0
+call    0 returned 3
+    $$$$$:   36-block  1
+call    1 never executed
+        -:   37:
+function _ZN10Repository4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 114 returned 14% blocks executed 70%
+      114:   38:const Car& Repository::find(const string& nr_i) {
+        -:   39:    /*for(const Car& c: this->allCars)
+        -:   40:    {
+        -:   41:        if(c.get_nr_inmatriculare() == nr_i)
+        -:   42:            return c;
+        -:   43:    }
+        -:   44:    throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+        -:   45:    */
+        -:   46:
+      114:   47:    vector<Car>::iterator f = std::find_if(this->allCars.begin(),this->allCars.end(),
+      114:   47-block  0
+call    0 returned 114
+branch  1 taken 114 (fallthrough)
+branch  2 taken 0 (throw)
+      114:   47-block  1
+call    3 returned 114
+call    4 returned 114
+call    5 returned 114
+branch  6 taken 114 (fallthrough)
+branch  7 taken 0 (throw)
+      114:   47-block  2
+call    8 returned 114
+    $$$$$:   47-block  3
+call    9 never executed
+    $$$$$:   47-block  4
+function _ZZN10Repository4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK3CarE_clESA_ called 315 returned 100% blocks executed 100%
+      315:   48:                                           [=](const Car& c){
+      315:   49:                                               return c.get_nr_inmatriculare() == nr_i;
+      315:   49-block  0
+call    0 returned 315
+call    1 returned 315
+call    2 returned 315
+        -:   50:                                           });
+      114:   51:    if(f != this->allCars.end())
+call    0 returned 114
+call    1 returned 114
+branch  2 taken 16 (fallthrough)
+branch  3 taken 98
+       32:   52:        return (*f);
+       16:   52-block  0
+call    0 returned 16
+       16:   52-block  1
+       98:   53:    else throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+       98:   53-block  0
+call    0 returned 98
+call    1 returned 98
+branch  2 taken 98 (fallthrough)
+branch  3 taken 0 (throw)
+       98:   53-block  1
+call    4 returned 98
+branch  5 taken 98 (fallthrough)
+branch  6 taken 0 (throw)
+       98:   53-block  2
+call    7 returned 98
+call    8 returned 98
+call    9 returned 98
+call   10 returned 98
+    $$$$$:   53-block  3
+call   11 never executed
+    $$$$$:   53-block  4
+    $$$$$:   53-block  5
+call   12 never executed
+        -:   54:
+        -:   55:}
+        -:   56:
+function _ZN10Repository6existsERK3Car called 97 returned 100% blocks executed 92%
+       97:   57:bool Repository::exists(const Car &c) {
+        -:   58:    try{
+      191:   59:        find(c.get_nr_inmatriculare());
+       97:   59-block  0
+call    0 returned 97
+branch  1 taken 97 (fallthrough)
+branch  2 taken 0 (throw)
+       97:   59-block  1
+call    3 returned 97
+branch  4 taken 3 (fallthrough)
+branch  5 taken 94 (throw)
+        3:   59-block  2
+call    6 returned 3
+       94:   59-block  3
+call    7 returned 94
+       94:   59-block  4
+        3:   60:        return true;
+        -:   61:    }
+       94:   62:    catch(RepositoryException&)
+       94:   62-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 94
+       94:   62-block  1
+call    2 returned 94
+        -:   63:    {
+       94:   64:        return false;
+       94:   65:    }
+        -:   66:}
+        -:   67:
+function _ZN10Repository5storeERK3Car called 95 returned 98% blocks executed 67%
+       95:   68:void Repository::store(const Car &c) {
+       95:   69:    if(exists(c)){
+       95:   69-block  0
+call    0 returned 95
+branch  1 taken 2 (fallthrough)
+branch  2 taken 93
+        2:   70:        throw RepositoryException("Masina cu numarul de inmatriculare "+c.get_nr_inmatriculare()+" exista deja in lista!\n");
+        2:   70-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   70-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   70-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:   70-block  3
+call   10 returned 2
+call   11 returned 2
+call   12 returned 2
+call   13 returned 2
+call   14 returned 0
+    $$$$$:   70-block  4
+call   15 never executed
+    $$$$$:   70-block  5
+    $$$$$:   70-block  6
+call   16 never executed
+    $$$$$:   70-block  7
+    $$$$$:   70-block  8
+call   17 never executed
+        -:   71:    }
+       93:   72:    this->allCars.push_back(c);
+       93:   72-block  0
+call    0 returned 93
+        -:   73:    //this->allCars.add(c);
+       93:   74:}
+        -:   75:
+function _ZNK10Repository10getAllCarsEv called 22 returned 100% blocks executed 100%
+       22:   76:vector<Car> Repository::getAllCars() const {
+        -:   77:    /*
+        -:   78:    vector<Car> cars;
+        -:   79:    for(const auto& car: this->allCars)
+        -:   80:    {
+        -:   81:        cars.push_back(car);
+        -:   82:    }
+        -:   83:    return cars;*/
+        -:   84:
+        -:   85:    // pentru a reduce apelarea constructorului de copiere
+       22:   86:    return this->allCars;
+       22:   86-block  0
+call    0 returned 22
+        -:   87:}
+        -:   88:
+function _ZN14FileRepository12loadFromFileEv called 3 returned 67% blocks executed 60%
+        3:   89:void FileRepository::loadFromFile() {
+        3:   90:    std::ifstream in(fName);
+        3:   90-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   91:    if(!in.is_open())
+        3:   91-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   91-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 2
+        -:   92:    {
+        1:   93:        throw RepositoryException("Unable to open file: "+fName+"!\n");
+        1:   93-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   93-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   93-block  2
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   93-block  3
+call   11 never executed
+    $$$$$:   93-block  4
+    $$$$$:   93-block  5
+call   12 never executed
+        -:   94:    }
+        5:   95:    while(!in.eof())
+        2:   95-block  0
+        5:   95-block  1
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   95-block  2
+branch  3 taken 3
+branch  4 taken 2 (fallthrough)
+        -:   96:    {
+        3:   97:        string nr_inmatriculare;
+        3:   97-block  0
+call    0 returned 3
+        3:   98:        string producator;
+call    0 returned 3
+        3:   99:        string model;
+call    0 returned 3
+        3:  100:        string tip;
+call    0 returned 3
+        -:  101:
+        3:  102:        in>>nr_inmatriculare;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  103:        in>>producator;
+        3:  103-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  104:        in>>model;
+        3:  104-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  105:        in>>tip;
+        3:  105-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  106:
+        6:  107:        Car c{nr_inmatriculare.c_str(),producator.c_str(),model.c_str(),tip.c_str()};
+        3:  107-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:  107-block  1
+call    5 returned 3
+call    6 returned 3
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+        3:  107-block  2
+call   10 returned 3
+call   11 returned 3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  107-block  3
+call   15 returned 3
+call   16 returned 3
+call   17 returned 3
+branch 18 taken 3 (fallthrough)
+branch 19 taken 0 (throw)
+        3:  107-block  4
+call   20 returned 3
+call   21 returned 3
+call   22 returned 3
+call   23 returned 3
+call   24 returned 3
+call   25 returned 3
+call   26 returned 3
+call   27 returned 3
+    $$$$$:  107-block  5
+    $$$$$:  107-block  6
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+    $$$$$:  107-block 11
+        3:  108:        Repository::store(c);
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  109:    }
+        3:  109-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+call    3 returned 3
+call    4 returned 3
+    $$$$$:  109-block  1
+call    5 never executed
+    $$$$$:  109-block  2
+call    6 never executed
+    $$$$$:  109-block  3
+call    7 never executed
+    $$$$$:  109-block  4
+call    8 never executed
+    $$$$$:  109-block  5
+call    9 never executed
+        2:  110:    in.close();
+        2:  110-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  111:}
+        2:  111-block  0
+call    0 returned 2
+        1:  111-block  1
+call    1 returned 1
+        -:  112:
+function _ZN14FileRepository11writeToFileEv called 2 returned 100% blocks executed 51%
+        2:  113:void FileRepository::writeToFile() {
+        2:  114:    std::ofstream out(fName);
+        2:  114-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  115:    if(!out.is_open())
+        2:  115-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  115-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 2
+        -:  116:    {
+    #####:  117:        throw RepositoryException("Unable to open file: "+fName+"!\n");
+    %%%%%:  117-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  117-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  117-block  2
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  117-block  3
+call   11 never executed
+    $$$$$:  117-block  4
+    $$$$$:  117-block  5
+call   12 never executed
+        -:  118:    }
+        5:  119:    for(auto& c:getAllCars())
+        2:  119-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  119-block  1
+call    3 returned 2
+call    4 returned 2
+        3:  119-block  2
+call    5 returned 3
+        5:  119-block  3
+call    6 returned 5
+branch  7 taken 3
+branch  8 taken 2 (fallthrough)
+        -:  120:    {
+        3:  121:        out<<c.get_nr_inmatriculare()<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  121-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  121-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  121-block  2
+call    9 returned 3
+    $$$$$:  121-block  3
+call   10 never executed
+    $$$$$:  121-block  4
+        3:  122:        out<<c.get_producator()<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  122-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  122-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  122-block  2
+call    9 returned 3
+    $$$$$:  122-block  3
+call   10 never executed
+    $$$$$:  122-block  4
+        3:  123:        out<<c.get_model()<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  123-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  123-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  123-block  2
+call    9 returned 3
+    $$$$$:  123-block  3
+call   10 never executed
+    $$$$$:  123-block  4
+        3:  124:        out<<c.get_tip()<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  124-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  124-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  124-block  2
+call    9 returned 3
+call   10 returned 3
+    $$$$$:  124-block  3
+call   11 never executed
+    $$$$$:  124-block  4
+        2:  125:    }
+        2:  125-block  0
+call    0 returned 2
+    $$$$$:  125-block  1
+call    1 never executed
+        2:  126:}
+call    0 returned 2
+    $$$$$:  126-block  0
+call    1 never executed
+        -:  127:
+        -:  128:
+        -:  129:
+function _ZNK7LabRepo17get_probabilitateEv called 0 returned 0% blocks executed 0%
+    #####:  130:float LabRepo::get_probabilitate() const {
+    #####:  131:    return this->probabilitate;
+    %%%%%:  131-block  0
+        -:  132:}
+        -:  133:
+function _ZN7LabRepo15arunca_exceptieEv called 0 returned 0% blocks executed 0%
+    #####:  134:int LabRepo::arunca_exceptie() {
+    #####:  135:    std::random_device rd;
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  136:    std::mt19937 gen(rd());
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  136-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  137:    std::uniform_real_distribution<> dist(0,1);
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  138:    double val=dist(gen);
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  139:    if(val<this->get_probabilitate())
+    %%%%%:  139-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  140:        return 1;
+    %%%%%:  140-block  0
+    #####:  141:    return 0;
+    %%%%%:  141-block  0
+        -:  142:}
+        -:  143:
+function _ZN7LabRepo5storeERK3Car called 0 returned 0% blocks executed 0%
+    #####:  144:void LabRepo::store(const Car &c) {
+        -:  145:    //if(arunca_exceptie()==1)
+        -:  146:    //     throw RepositoryException("Exceptie!!!\n");
+        -:  147:
+    #####:  148:    string key = c.get_producator();
+    %%%%%:  148-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:    allCars.insert({key, c});
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  149-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  149-block  2
+call    6 never executed
+    $$$$$:  149-block  3
+call    7 never executed
+    $$$$$:  149-block  4
+    #####:  150:}
+call    0 never executed
+    $$$$$:  150-block  0
+call    1 never executed
+        -:  151:
+function _ZNK7LabRepo10getAllCarsEv called 0 returned 0% blocks executed 0%
+    #####:  152:vector<Car> LabRepo::getAllCars() const {
+    #####:  153:    vector<Car> cars;
+    %%%%%:  153-block  0
+call    0 never executed
+        -:  154:
+    #####:  155:    for(const auto& i:allCars)
+call    0 never executed
+call    1 never executed
+    %%%%%:  155-block  0
+call    2 never executed
+    %%%%%:  155-block  1
+call    3 never executed
+    %%%%%:  155-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:  156:    {
+    #####:  157:        cars.push_back(i.second);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  158:    }
+        -:  159:
+    #####:  160:    return cars;
+    %%%%%:  160-block  0
+    %%%%%:  160-block  1
+    =====:  161:}
+    $$$$$:  161-block  0
+call    0 never executed
+        -:  162:
+function _ZN7LabRepo4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  163:const Car &LabRepo::find(const string &nr_i) {
+    #####:  164:    if(arunca_exceptie()==1)
+    %%%%%:  164-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  164-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  165:        throw RepositoryException("Exceptie!!!\n");
+    %%%%%:  165-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  165-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  165-block  2
+call    9 never executed
+    $$$$$:  165-block  3
+    $$$$$:  165-block  4
+call   10 never executed
+        -:  166:
+    #####:  167:    vector<Car> masini=this->getAllCars();
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  168:    vector<Car>::iterator f = std::find_if(masini.begin(),masini.end(),
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  168-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  168-block  2
+call    8 never executed
+    $$$$$:  168-block  3
+call    9 never executed
+    $$$$$:  168-block  4
+function _ZZN7LabRepo4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK3CarE_clESA_ called 0 returned 0% blocks executed 0%
+    #####:  169:                                           [=](const Car& c){
+    #####:  170:                                               return c.get_nr_inmatriculare() == nr_i;
+    %%%%%:  170-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  171:                                           });
+    #####:  172:    if(f != masini.end())
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  173:        return (*f);
+    %%%%%:  173-block  0
+call    0 never executed
+    %%%%%:  173-block  1
+    #####:  174:    else throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+    %%%%%:  174-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  174-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  174-block  2
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  174-block  3
+call   11 never executed
+    $$$$$:  174-block  4
+    $$$$$:  174-block  5
+call   12 never executed
+    #####:  175:}
+call    0 never executed
+    $$$$$:  175-block  0
+call    1 never executed
+        -:  176:
+function _ZN7LabRepo6existsERK3Car called 0 returned 0% blocks executed 0%
+    #####:  177:bool LabRepo::exists(const Car &c) {
+    #####:  178:    if(arunca_exceptie()==1)
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  179:        throw RepositoryException("Exceptie!!!\n");
+    %%%%%:  179-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  179-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  179-block  2
+call    9 never executed
+    $$$$$:  179-block  3
+    $$$$$:  179-block  4
+call   10 never executed
+        -:  180:
+        -:  181:    try{
+    #####:  182:        find(c.get_nr_inmatriculare());
+    %%%%%:  182-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  182-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  182-block  2
+call    6 never executed
+    $$$$$:  182-block  3
+call    7 never executed
+    $$$$$:  182-block  4
+    #####:  183:        return true;
+        -:  184:    }
+    =====:  185:    catch(RepositoryException&)
+    $$$$$:  185-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  185-block  1
+call    2 never executed
+        -:  186:    {
+    =====:  187:        return false;
+    =====:  188:    }
+        -:  189:}
+        -:  190:
+function _ZN7LabRepo12cauta_indiceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  191:int LabRepo::cauta_indice(const string &nr_i) {
+    #####:  192:    if(arunca_exceptie()==1)
+    %%%%%:  192-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  192-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  193:        throw RepositoryException("Exceptie!!!\n");
+    %%%%%:  193-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  193-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  193-block  2
+call    9 never executed
+    $$$$$:  193-block  3
+    $$$$$:  193-block  4
+call   10 never executed
+        -:  194:
+    #####:  195:    vector<Car> masini=this->getAllCars();
+    %%%%%:  195-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  196:    for(int i=0; i<masini.size();i++)
+    %%%%%:  196-block  0
+    %%%%%:  196-block  1
+    %%%%%:  196-block  2
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  197:    {
+    #####:  198:        if(masini[i].get_nr_inmatriculare() == nr_i)
+    %%%%%:  198-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  198-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:  199:            return i;
+    %%%%%:  199-block  0
+        -:  200:    }
+    #####:  201:    return -1;
+    %%%%%:  201-block  0
+    #####:  202:}
+    %%%%%:  202-block  0
+call    0 never executed
+    $$$$$:  202-block  1
+call    1 never executed
+        -:  203:
+        -:  204://
+function _ZN7LabRepo9deleteCarERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  205:int LabRepo::deleteCar(const string &nr_i) {
+    #####:  206:    if(arunca_exceptie()==1)
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  206-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  207:        throw RepositoryException("Exceptie!!!\n");
+    %%%%%:  207-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  207-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  207-block  2
+call    9 never executed
+    $$$$$:  207-block  3
+    $$$$$:  207-block  4
+call   10 never executed
+        -:  208:
+        -:  209:
+    #####:  210:    vector<Car> masini=this->getAllCars();
+    %%%%%:  210-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  211:
+    #####:  212:    int poz = cauta_indice(nr_i);
+    %%%%%:  212-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  213:    if(poz == -1)
+    %%%%%:  213-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  214:        throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+    %%%%%:  214-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  214-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  214-block  2
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  214-block  3
+call   11 never executed
+    $$$$$:  214-block  4
+    $$$$$:  214-block  5
+call   12 never executed
+        -:  215:    //this->allCars.erase(poz);
+    #####:  216:    masini.erase(masini.begin()+poz);
+    %%%%%:  216-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  216-block  1
+    $$$$$:  216-block  2
+    $$$$$:  216-block  3
+        -:  217:
+    #####:  218:    return 1;
+    %%%%%:  218-block  0
+    #####:  219:}
+    %%%%%:  219-block  0
+call    0 never executed
+    $$$$$:  219-block  1
+call    1 never executed
+        -:  220:
+        -:  221://
+function _ZN7LabRepo17modifyPlateNumberERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 0 returned 0% blocks executed 0%
+    #####:  222:int LabRepo::modifyPlateNumber(const string &nr_i, const string &new_nr_i) {
+    #####:  223:    if(arunca_exceptie()==1)
+    %%%%%:  223-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  223-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  224:        throw RepositoryException("Exceptie!!!\n");
+    %%%%%:  224-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  224-block  1
+call    5 never executed
+call    6 never executed
+call    7 never executed
+call    8 never executed
+    $$$$$:  224-block  2
+call    9 never executed
+    $$$$$:  224-block  3
+    $$$$$:  224-block  4
+call   10 never executed
+        -:  225:
+    #####:  226:    int poz = cauta_indice(nr_i);
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  227:    if(poz == -1)
+    %%%%%:  227-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  228:        throw RepositoryException("Masina cu numarul de inmatriculare "+nr_i+" nu exista in lista!\n");
+    %%%%%:  228-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  228-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  228-block  2
+call    7 never executed
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  228-block  3
+call   11 never executed
+    $$$$$:  228-block  4
+    $$$$$:  228-block  5
+call   12 never executed
+    #####:  229:    Car c = find(nr_i);
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  229-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  230:    c.set_nr_inmatriculare(new_nr_i);
+    %%%%%:  230-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  230-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  230-block  2
+call    6 never executed
+    $$$$$:  230-block  3
+call    7 never executed
+    $$$$$:  230-block  4
+        -:  231:    //this->allCars.set(c,poz);
+    #####:  232:    this->allCars[c.get_producator()]=c;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  232-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  232-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  232-block  2
+call    9 never executed
+    $$$$$:  232-block  3
+call   10 never executed
+    $$$$$:  232-block  4
+    #####:  233:    return 1;
+    %%%%%:  233-block  0
+    #####:  234:}
+call    0 never executed
+    $$$$$:  234-block  0
+call    1 never executed
+        -:  235:
+        -:  236:
+        -:  237:
+function _Z11testAddRepov called 1 returned 100% blocks executed 48%
+        1:  238:void testAddRepo()
+        -:  239:{
+        1:  240:    Repository testRepo;
+        1:  240-block  0
+call    0 returned 1
+        2:  241:    Car car1{"CJ12WZB","CITROEN","C3","oras"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  241-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  241-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  241-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  241-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  241-block  4
+    $$$$$:  241-block  5
+    $$$$$:  241-block  6
+    $$$$$:  241-block  7
+    $$$$$:  241-block  8
+    $$$$$:  241-block  9
+    $$$$$:  241-block 10
+        1:  242:    testRepo.store(car1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  243:    assert(testRepo.getAllCars().size() == 1);
+        1:  243-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  243-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  243-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  243-block  3
+    %%%%%:  243-block  4
+        1:  243-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  243-block  6
+call   11 returned 1
+    $$$$$:  243-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  243-block  8
+call   14 never executed
+    $$$$$:  243-block  9
+        -:  244:
+        2:  245:    Car car2{"CJ12WZB","CITROEN","C5","oras"};
+        1:  245-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  245-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  245-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  245-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  245-block  4
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  245-block  5
+    $$$$$:  245-block  6
+    $$$$$:  245-block  7
+    $$$$$:  245-block  8
+    $$$$$:  245-block  9
+    $$$$$:  245-block 10
+    $$$$$:  245-block 11
+        -:  246:    try{
+        1:  247:        testRepo.store(car2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  248:        assert(false);
+    %%%%%:  248-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  249:    }
+        1:  250:    catch(RepositoryException&)
+        1:  250-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  250-block  1
+call    2 returned 1
+        -:  251:    {
+        -:  252:        assert(true);
+        1:  253:    }
+call    0 returned 1
+        1:  254:}
+        1:  254-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  254-block  1
+call    3 never executed
+    $$$$$:  254-block  2
+call    4 never executed
+    $$$$$:  254-block  3
+call    5 never executed
+        -:  255:
+function _Z12testFindRepov called 1 returned 100% blocks executed 49%
+        1:  256:void testFindRepo()
+        -:  257:{
+        1:  258:    Repository testRepo;
+        1:  258-block  0
+call    0 returned 1
+        -:  259:
+        2:  260:    Car c1{"BZ14GLK","MERCEDES-BENZ","C","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  260-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  260-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  260-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  260-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  260-block  4
+    $$$$$:  260-block  5
+    $$$$$:  260-block  6
+    $$$$$:  260-block  7
+    $$$$$:  260-block  8
+    $$$$$:  260-block  9
+    $$$$$:  260-block 10
+        2:  261:    Car c2{"CL23RER","VOLKSWAGWEN","Passat","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  261-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  261-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  261-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  261-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  261-block  4
+    $$$$$:  261-block  5
+    $$$$$:  261-block  6
+    $$$$$:  261-block  7
+    $$$$$:  261-block  8
+    $$$$$:  261-block  9
+    $$$$$:  261-block 10
+        2:  262:    Car c3{"CJ06AAA","VOLVO","EX90","SUV"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  262-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  262-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  262-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  262-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  262-block  4
+    $$$$$:  262-block  5
+    $$$$$:  262-block  6
+    $$$$$:  262-block  7
+    $$$$$:  262-block  8
+    $$$$$:  262-block  9
+    $$$$$:  262-block 10
+        -:  263:
+        1:  264:    testRepo.store(c1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  265:    testRepo.store(c2);
+        1:  265-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  266:
+       1*:  267:    assert(testRepo.exists(c1));
+        1:  267-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  267-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  267-block  2
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+        1:  267-block  3
+    %%%%%:  267-block  4
+       1*:  268:    assert(!testRepo.exists(c3));
+        1:  268-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  268-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  268-block  2
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+        1:  268-block  3
+    %%%%%:  268-block  4
+        -:  269:
+        2:  270:    auto foundCar = testRepo.find("BZ14GLK");
+        1:  270-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  270-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  270-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+    $$$$$:  270-block  3
+    $$$$$:  270-block  4
+       1*:  271:    assert(foundCar.get_tip() == "Sedan");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  271-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  271-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  271-block  2
+    %%%%%:  271-block  3
+        1:  271-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  271-block  5
+call   11 returned 1
+    $$$$$:  271-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  271-block  7
+call   14 never executed
+    $$$$$:  271-block  8
+       1*:  272:    assert(foundCar.get_producator() == "MERCEDES-BENZ");
+        1:  272-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  272-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  272-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  272-block  3
+    %%%%%:  272-block  4
+        1:  272-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  272-block  6
+call   11 returned 1
+    $$$$$:  272-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  272-block  8
+call   14 never executed
+    $$$$$:  272-block  9
+        -:  273:
+        -:  274:    try{
+       3*:  275:        testRepo.find("BC11TTT");
+        1:  275-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  275-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  275-block  2
+call    7 never executed
+call    8 never executed
+        1:  275-block  3
+call    9 returned 1
+        1:  275-block  4
+        1:  275-block  5
+call   10 returned 1
+        1:  275-block  6
+    #####:  276:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  277:    }
+        1:  278:    catch(RepositoryException& ve)
+        1:  278-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  278-block  1
+call    2 returned 1
+        -:  279:    {
+        1:  280:        assert(ve.getErrorMessage() == "Masina cu numarul de inmatriculare BC11TTT nu exista in lista!\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  280-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    $$$$$:  280-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  280-block  2
+    $$$$$:  280-block  3
+        1:  280-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  280-block  5
+call   11 returned 1
+    $$$$$:  280-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  280-block  7
+call   14 never executed
+    $$$$$:  280-block  8
+        1:  281:    }
+        1:  281-block  0
+call    0 returned 1
+    $$$$$:  281-block  1
+call    1 never executed
+        1:  282:}
+        1:  282-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  282-block  1
+call    5 never executed
+    $$$$$:  282-block  2
+call    6 never executed
+    $$$$$:  282-block  3
+call    7 never executed
+    $$$$$:  282-block  4
+call    8 never executed
+    $$$$$:  282-block  5
+call    9 never executed
+        -:  283:
+function _Z14testDeleteRepov called 1 returned 100% blocks executed 47%
+        1:  284:void testDeleteRepo()
+        -:  285:{
+        1:  286:    Repository testRepo;
+        1:  286-block  0
+call    0 returned 1
+        -:  287:
+        2:  288:    Car c1{"BZ14GLK","MERCEDES-BENZ","C","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  288-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  288-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  288-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  288-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  288-block  4
+    $$$$$:  288-block  5
+    $$$$$:  288-block  6
+    $$$$$:  288-block  7
+    $$$$$:  288-block  8
+    $$$$$:  288-block  9
+    $$$$$:  288-block 10
+        2:  289:    Car c2{"CL23RER","VOLKSWAGWEN","Passat","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  289-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  289-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  289-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  289-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  289-block  4
+    $$$$$:  289-block  5
+    $$$$$:  289-block  6
+    $$$$$:  289-block  7
+    $$$$$:  289-block  8
+    $$$$$:  289-block  9
+    $$$$$:  289-block 10
+        2:  290:    Car c3{"CJ06AAA","VOLVO","EX90","SUV"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  290-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  290-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  290-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  290-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  290-block  4
+    $$$$$:  290-block  5
+    $$$$$:  290-block  6
+    $$$$$:  290-block  7
+    $$$$$:  290-block  8
+    $$$$$:  290-block  9
+    $$$$$:  290-block 10
+        -:  291:
+        1:  292:    testRepo.store(c1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  293:    testRepo.store(c2);
+        1:  293-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  294:    testRepo.store(c3);
+        1:  294-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  295:
+       1*:  296:    assert(testRepo.cauta_indice("BZ14GLK") == 0);
+        1:  296-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  296-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  296-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  296-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        1:  296-block  4
+    %%%%%:  296-block  5
+        1:  296-block  6
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0
+        1:  296-block  7
+call   14 returned 1
+        1:  296-block  8
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  296-block  9
+call   17 returned 1
+    $$$$$:  296-block 10
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  296-block 11
+call   20 never executed
+    $$$$$:  296-block 12
+    $$$$$:  296-block 13
+branch 21 never executed
+branch 22 never executed
+    $$$$$:  296-block 14
+call   23 never executed
+    $$$$$:  296-block 15
+       1*:  297:    assert(testRepo.cauta_indice("ABCDEF") == -1);
+        1:  297-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  297-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  297-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  297-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        1:  297-block  4
+    %%%%%:  297-block  5
+        1:  297-block  6
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0
+        1:  297-block  7
+call   14 returned 1
+        1:  297-block  8
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  297-block  9
+call   17 returned 1
+    $$$$$:  297-block 10
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  297-block 11
+call   20 never executed
+    $$$$$:  297-block 12
+    $$$$$:  297-block 13
+branch 21 never executed
+branch 22 never executed
+    $$$$$:  297-block 14
+call   23 never executed
+    $$$$$:  297-block 15
+        -:  298:
+        -:  299:    try{
+        1:  300:        testRepo.deleteCar("BZ14GLK");
+        1:  300-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  300-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  300-block  2
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  300-block  3
+call    9 never executed
+    $$$$$:  300-block  4
+    $$$$$:  300-block  5
+call   10 never executed
+    $$$$$:  300-block  6
+        -:  301:        assert(true);
+        -:  302:    }
+    =====:  303:    catch(RepositoryException&){
+    $$$$$:  303-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  303-block  1
+call    2 never executed
+    =====:  304:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  305:    }
+    $$$$$:  305-block  0
+call    0 never executed
+    $$$$$:  305-block  1
+call    1 never executed
+        -:  306:
+       1*:  307:    assert(testRepo.getAllCars().size() == 2);
+        1:  307-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  307-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  307-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  307-block  3
+    %%%%%:  307-block  4
+        1:  307-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  307-block  6
+call   11 returned 1
+    $$$$$:  307-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  307-block  8
+call   14 never executed
+    $$$$$:  307-block  9
+        -:  308:
+        -:  309:    try{
+       3*:  310:        testRepo.deleteCar("ABCDEF");
+        1:  310-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  310-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  310-block  2
+call    7 never executed
+call    8 never executed
+        1:  310-block  3
+call    9 returned 1
+        1:  310-block  4
+        1:  310-block  5
+call   10 returned 1
+        1:  310-block  6
+    #####:  311:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  312:    }
+        1:  313:    catch(RepositoryException&){
+        1:  313-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  313-block  1
+call    2 returned 1
+        -:  314:        assert(true);
+        1:  315:    }
+call    0 returned 1
+        -:  316:
+        1:  317:}
+        1:  317-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  317-block  1
+call    4 never executed
+    $$$$$:  317-block  2
+call    5 never executed
+    $$$$$:  317-block  3
+call    6 never executed
+    $$$$$:  317-block  4
+call    7 never executed
+        -:  318:
+function _Z14testModifyRepov called 1 returned 100% blocks executed 49%
+        1:  319:void testModifyRepo()
+        -:  320:{
+        1:  321:    Repository testRepo;
+        1:  321-block  0
+call    0 returned 1
+        -:  322:
+        2:  323:    Car c1{"BZ14GLK","MERCEDES-BENZ","C","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  323-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  323-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  323-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  323-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  323-block  4
+    $$$$$:  323-block  5
+    $$$$$:  323-block  6
+    $$$$$:  323-block  7
+    $$$$$:  323-block  8
+    $$$$$:  323-block  9
+    $$$$$:  323-block 10
+        2:  324:    Car c2{"CL23RER","VOLKSWAGWEN","Passat","Sedan"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  324-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  324-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  324-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  324-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  324-block  4
+    $$$$$:  324-block  5
+    $$$$$:  324-block  6
+    $$$$$:  324-block  7
+    $$$$$:  324-block  8
+    $$$$$:  324-block  9
+    $$$$$:  324-block 10
+        2:  325:    Car c3{"CJ06AAA","VOLVO","EX90","SUV"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  325-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  325-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  325-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  325-block  3
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:  325-block  4
+    $$$$$:  325-block  5
+    $$$$$:  325-block  6
+    $$$$$:  325-block  7
+    $$$$$:  325-block  8
+    $$$$$:  325-block  9
+    $$$$$:  325-block 10
+        -:  326:
+        1:  327:    testRepo.store(c1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  328:    testRepo.store(c2);
+        1:  328-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  329:    testRepo.store(c3);
+        1:  329-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  330:
+        -:  331:    try{
+        1:  332:        testRepo.modifyPlateNumber("BZ14GLK","BC14GLK");
+        1:  332-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  332-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  332-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:  332-block  3
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  332-block  4
+call   15 never executed
+    $$$$$:  332-block  5
+    $$$$$:  332-block  6
+call   16 never executed
+    $$$$$:  332-block  7
+    $$$$$:  332-block  8
+call   17 never executed
+    $$$$$:  332-block  9
+    $$$$$:  332-block 10
+call   18 never executed
+    $$$$$:  332-block 11
+        -:  333:        assert(true);
+        -:  334:    }
+    =====:  335:    catch(RepositoryException&)
+    $$$$$:  335-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  335-block  1
+call    2 never executed
+        -:  336:    {
+    =====:  337:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  338:    }
+    $$$$$:  338-block  0
+call    0 never executed
+    $$$$$:  338-block  1
+call    1 never executed
+        -:  339:
+        -:  340:    try{
+       5*:  341:        testRepo.modifyPlateNumber("BZ14GLK","BC14GLK");
+        1:  341-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  341-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  341-block  2
+call    8 returned 1
+branch  9 taken 0 (fallthrough)
+branch 10 taken 1 (throw)
+    %%%%%:  341-block  3
+call   11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+        1:  341-block  4
+call   15 returned 1
+        1:  341-block  5
+        1:  341-block  6
+call   16 returned 1
+        1:  341-block  7
+        1:  341-block  8
+call   17 returned 1
+        1:  341-block  9
+        1:  341-block 10
+call   18 returned 1
+        1:  341-block 11
+    #####:  342:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  343:    }
+        1:  344:    catch(RepositoryException&)
+        1:  344-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  344-block  1
+call    2 returned 1
+        -:  345:    {
+        -:  346:        assert(true);
+        1:  347:    }
+call    0 returned 1
+        1:  348:}
+        1:  348-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  348-block  1
+call    4 never executed
+    $$$$$:  348-block  2
+call    5 never executed
+    $$$$$:  348-block  3
+call    6 never executed
+    $$$$$:  348-block  4
+call    7 never executed
+        -:  349:
+function _Z12testFileRepov called 1 returned 100% blocks executed 51%
+        1:  350:void testFileRepo()
+        -:  351:{
+        1:  352:    std::ofstream out("testFileRepo.txt", std::ios::trunc);
+        1:  352-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  353:    out.close();
+        1:  353-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  354:    FileRepository fileRepo{"testFileRepo.txt"};
+        1:  354-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  354-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  354-block  2
+    $$$$$:  354-block  3
+        1:  355:    fileRepo.store(Car{"BV23ABC", "Ford", "Focus", "Hatchback"});
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  355-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  355-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  355-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  355-block  3
+call   16 returned 1
+call   17 returned 1
+branch 18 taken 1 (fallthrough)
+branch 19 taken 0 (throw)
+        1:  355-block  4
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+call   27 returned 1
+call   28 returned 1
+    $$$$$:  355-block  5
+call   29 never executed
+    $$$$$:  355-block  6
+    $$$$$:  355-block  7
+call   30 never executed
+    $$$$$:  355-block  8
+    $$$$$:  355-block  9
+call   31 never executed
+    $$$$$:  355-block 10
+    $$$$$:  355-block 11
+call   32 never executed
+    $$$$$:  355-block 12
+    $$$$$:  355-block 13
+call   33 never executed
+    $$$$$:  355-block 14
+    $$$$$:  355-block 15
+call   34 never executed
+    $$$$$:  355-block 16
+    $$$$$:  355-block 17
+call   35 never executed
+    $$$$$:  355-block 18
+    $$$$$:  355-block 19
+call   36 never executed
+    $$$$$:  355-block 20
+    $$$$$:  355-block 21
+call   37 never executed
+    $$$$$:  355-block 22
+        -:  356:
+        2:  357:    FileRepository fileRepo1{"testFileRepo.txt"};
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  357-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  357-block  1
+    $$$$$:  357-block  2
+        2:  358:    auto c = fileRepo1.find("BV23ABC");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  358-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  358-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+    $$$$$:  358-block  2
+    $$$$$:  358-block  3
+       1*:  359:    assert(c.get_producator()=="Ford");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  359-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  359-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:  359-block  2
+    %%%%%:  359-block  3
+        1:  359-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:  359-block  5
+call   11 returned 1
+    $$$$$:  359-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:  359-block  7
+call   14 never executed
+    $$$$$:  359-block  8
+        -:  360:    try{
+       3*:  361:        fileRepo1.find("AB11AAA");
+        1:  361-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  361-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+    %%%%%:  361-block  2
+call    7 never executed
+call    8 never executed
+        1:  361-block  3
+call    9 returned 1
+        1:  361-block  4
+        1:  361-block  5
+call   10 returned 1
+        1:  361-block  6
+    #####:  362:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  363:    }
+        1:  364:    catch(RepositoryException&){
+        1:  364-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  364-block  1
+call    2 returned 1
+        -:  365:        assert(true);
+        1:  366:    }
+call    0 returned 1
+       1*:  367:    assert(fileRepo1.deleteCar("BV23ABC")==1);
+        1:  367-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  367-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  367-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  367-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+        1:  367-block  4
+    %%%%%:  367-block  5
+        1:  367-block  6
+branch 12 taken 1 (fallthrough)
+branch 13 taken 0
+        1:  367-block  7
+call   14 returned 1
+        1:  367-block  8
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0
+        1:  367-block  9
+call   17 returned 1
+    $$$$$:  367-block 10
+branch 18 never executed
+branch 19 never executed
+    $$$$$:  367-block 11
+call   20 never executed
+    $$$$$:  367-block 12
+    $$$$$:  367-block 13
+branch 21 never executed
+branch 22 never executed
+    $$$$$:  367-block 14
+call   23 never executed
+    $$$$$:  367-block 15
+        -:  368:    //assert(fileRepo1.getAllCars().empty());
+        -:  369:
+        -:  370:    try{
+       3*:  371:        FileRepository fileRepo2{"te/stCars.txt"};
+        1:  371-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  371-block  1
+call    4 returned 1
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1 (throw)
+call    7 never executed
+        1:  371-block  2
+        1:  371-block  3
+    #####:  372:        assert(false);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  373:    }
+    %%%%%:  373-block  0
+call    0 never executed
+    $$$$$:  373-block  1
+call    1 never executed
+        1:  374:    catch(RepositoryException&){
+        1:  374-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  374-block  1
+call    2 returned 1
+        -:  375:        assert(true);
+        1:  376:    }
+call    0 returned 1
+        -:  377:
+        -:  378:
+        1:  379:}
+        1:  379-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  379-block  1
+call    4 never executed
+    $$$$$:  379-block  2
+call    5 never executed
+    $$$$$:  379-block  3
+call    6 never executed
+    $$$$$:  379-block  4
+call    7 never executed
+        -:  380:
+function _Z9testeRepov called 1 returned 100% blocks executed 100%
+        1:  381:void testeRepo()
+        -:  382:{
+        1:  383:    testAddRepo();
+        1:  383-block  0
+call    0 returned 1
+        1:  384:    testFindRepo();
+call    0 returned 1
+        1:  385:    testDeleteRepo();
+call    0 returned 1
+        1:  386:    testModifyRepo();
+call    0 returned 1
+        -:  387:
+        1:  388:    testVectorDinamic();
+call    0 returned 1
+        1:  389:    testAssignmentOperator();
+call    0 returned 1
+        -:  390:
+        1:  391:    testFileRepo();
+call    0 returned 1
+        1:  392:}

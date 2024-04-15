@@ -1,0 +1,464 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Car.cpp
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Car.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Car.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Car.h"
+        -:    2:#include <assert.h>
+        -:    3:
+        -:    4:#include <utility>
+        -:    5:
+function _ZNK3Car20get_nr_inmatriculareB5cxx11Ev called 669 returned 100% blocks executed 100%
+      669:    6:string Car::get_nr_inmatriculare() const {
+      669:    7:    return this->nr_inmatriculare;
+      669:    7-block  0
+call    0 returned 669
+        -:    8:}
+        -:    9:
+function _ZNK3Car14get_producatorB5cxx11Ev called 217 returned 100% blocks executed 100%
+      217:   10:string Car::get_producator() const {
+      217:   11:    return this->producator;
+      217:   11-block  0
+call    0 returned 217
+        -:   12:}
+        -:   13:
+function _ZNK3Car7get_tipB5cxx11Ev called 149 returned 100% blocks executed 100%
+      149:   14:string Car::get_tip() const{
+      149:   15:    return this->tip;
+      149:   15-block  0
+call    0 returned 149
+        -:   16:}
+        -:   17:
+function _ZNK3Car9get_modelB5cxx11Ev called 115 returned 100% blocks executed 100%
+      115:   18:string Car::get_model() const{
+      115:   19:    return this->model;
+      115:   19-block  0
+call    0 returned 115
+        -:   20:}
+        -:   21:
+function _ZN3Car20set_nr_inmatriculareENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   22:void Car::set_nr_inmatriculare(string new_nr_inmatriculare) {
+        4:   23:    this->nr_inmatriculare = std::move(new_nr_inmatriculare);
+        4:   23-block  0
+call    0 returned 4
+call    1 returned 4
+        4:   24:}
+        -:   25:
+function _ZN3Car14set_producatorENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   26:void Car::set_producator(string new_producator) {
+        1:   27:    this->producator = std::move(new_producator);
+        1:   27-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   28:}
+        -:   29:
+function _ZN3Car7set_tipENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   30:void Car::set_tip(string new_tip) {
+        1:   31:    this->tip = std::move(new_tip);
+        1:   31-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   32:}
+        -:   33:
+function _ZN3Car9set_modelENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   34:void Car::set_model(string new_model) {
+        1:   35:    this->model = std::move(new_model);
+        1:   35-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   36:}
+        -:   37:
+function _Z18cmpNrInmatriculareRK3CarS1_ called 20 returned 100% blocks executed 80%
+       20:   38:bool cmpNrInmatriculare(const Car& c1, const Car &c2)
+        -:   39:{
+       20:   40:    return c1.get_nr_inmatriculare() < c2.get_nr_inmatriculare();
+       20:   40-block  0
+call    0 returned 20
+call    1 returned 20
+branch  2 taken 20 (fallthrough)
+branch  3 taken 0 (throw)
+       20:   40-block  1
+call    4 returned 20
+call    5 returned 20
+call    6 returned 20
+       20:   40-block  2
+    $$$$$:   40-block  3
+call    7 never executed
+        -:   41:}
+        -:   42:
+function _Z6cmpTipRK3CarS1_ called 19 returned 100% blocks executed 80%
+       19:   43:bool cmpTip(const Car& c1, const Car &c2)
+        -:   44:{
+       19:   45:    return c1.get_tip() < c2.get_tip();
+       19:   45-block  0
+call    0 returned 19
+call    1 returned 19
+branch  2 taken 19 (fallthrough)
+branch  3 taken 0 (throw)
+       19:   45-block  1
+call    4 returned 19
+call    5 returned 19
+call    6 returned 19
+       19:   45-block  2
+    $$$$$:   45-block  3
+call    7 never executed
+        -:   46:}
+        -:   47:
+function _Z12cmpProdModelRK3CarS1_ called 27 returned 100% blocks executed 71%
+       27:   48:bool cmpProdModel(const Car& c1, const Car &c2)
+        -:   49:{
+       27:   50:    if(c1.get_producator() == c2.get_producator())
+       27:   50-block  0
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+       27:   50-block  1
+call    4 returned 27
+call    5 returned 27
+call    6 returned 27
+branch  7 taken 2 (fallthrough)
+branch  8 taken 25
+    $$$$$:   50-block  2
+call    9 never executed
+    $$$$$:   50-block  3
+call   10 never executed
+        2:   51:        return c1.get_model() < c2.get_model();
+        2:   51-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   51-block  1
+call    4 returned 2
+call    5 returned 2
+call    6 returned 2
+    $$$$$:   51-block  2
+call    7 never executed
+    $$$$$:   51-block  3
+call    8 never executed
+       25:   52:    return c1.get_producator() <c2.get_producator();
+       25:   52-block  0
+call    0 returned 25
+call    1 returned 25
+branch  2 taken 25 (fallthrough)
+branch  3 taken 0 (throw)
+       25:   52-block  1
+call    4 returned 25
+call    5 returned 25
+call    6 returned 25
+    $$$$$:   52-block  2
+call    7 never executed
+        -:   53:}
+        -:   54:
+function _Z12test_get_setv called 1 returned 100% blocks executed 51%
+        1:   55:void test_get_set()
+        -:   56:{
+        2:   57:    Car car1{"CJ12WZB","CITROEN","C3","oras"};
+        1:   57-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   57-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   57-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   57-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:   57-block  4
+call   16 returned 1
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+    $$$$$:   57-block  5
+    $$$$$:   57-block  6
+    $$$$$:   57-block  7
+    $$$$$:   57-block  8
+    $$$$$:   57-block  9
+    $$$$$:   57-block 10
+    $$$$$:   57-block 11
+       1*:   58:    assert(car1.get_nr_inmatriculare() == "CJ12WZB");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   58-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   58-block  2
+    %%%%%:   58-block  3
+        1:   58-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   58-block  5
+call   11 returned 1
+    $$$$$:   58-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   58-block  7
+call   14 never executed
+    $$$$$:   58-block  8
+       1*:   59:    assert(car1.get_producator() == "CITROEN");
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   59-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   59-block  3
+    %%%%%:   59-block  4
+        1:   59-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   59-block  6
+call   11 returned 1
+    $$$$$:   59-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   59-block  8
+call   14 never executed
+    $$$$$:   59-block  9
+       1*:   60:    assert(car1.get_model() == "C3");
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   60-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   60-block  3
+    %%%%%:   60-block  4
+        1:   60-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   60-block  6
+call   11 returned 1
+    $$$$$:   60-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   60-block  8
+call   14 never executed
+    $$$$$:   60-block  9
+       1*:   61:    assert(car1.get_tip() == "oras");
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   61-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   61-block  3
+    %%%%%:   61-block  4
+        1:   61-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   61-block  6
+call   11 returned 1
+    $$$$$:   61-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   61-block  8
+call   14 never executed
+    $$$$$:   61-block  9
+        -:   62:
+        1:   63:    car1.set_nr_inmatriculare("CJ12AAA");
+        1:   63-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   63-block  1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:   63-block  2
+call    7 never executed
+    $$$$$:   63-block  3
+        1:   64:    car1.set_producator("AUDI");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   64-block  0
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:   64-block  1
+call    7 never executed
+    $$$$$:   64-block  2
+        1:   65:    car1.set_model("A6");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   65-block  0
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:   65-block  1
+call    7 never executed
+    $$$$$:   65-block  2
+        1:   66:    car1.set_tip("sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   66-block  0
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+    $$$$$:   66-block  1
+call    7 never executed
+    $$$$$:   66-block  2
+        -:   67:
+       1*:   68:    assert(car1.get_nr_inmatriculare() == "CJ12AAA");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   68-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   68-block  2
+    %%%%%:   68-block  3
+        1:   68-block  4
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   68-block  5
+call   11 returned 1
+    $$$$$:   68-block  6
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   68-block  7
+call   14 never executed
+    $$$$$:   68-block  8
+       1*:   69:    assert(car1.get_producator() == "AUDI");
+        1:   69-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   69-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   69-block  3
+    %%%%%:   69-block  4
+        1:   69-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   69-block  6
+call   11 returned 1
+    $$$$$:   69-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   69-block  8
+call   14 never executed
+    $$$$$:   69-block  9
+       1*:   70:    assert(car1.get_model() == "A6");
+        1:   70-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   70-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   70-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   70-block  3
+    %%%%%:   70-block  4
+        1:   70-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   70-block  6
+call   11 returned 1
+    $$$$$:   70-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   70-block  8
+call   14 never executed
+    $$$$$:   70-block  9
+       1*:   71:    assert(car1.get_tip() == "sedan");
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   71-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        1:   71-block  3
+    %%%%%:   71-block  4
+        1:   71-block  5
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0
+        1:   71-block  6
+call   11 returned 1
+    $$$$$:   71-block  7
+branch 12 never executed
+branch 13 never executed
+    $$$$$:   71-block  8
+call   14 never executed
+    $$$$$:   71-block  9
+        1:   72:}
+        1:   72-block  0
+call    0 returned 1
+    $$$$$:   72-block  1
+call    1 never executed
+        -:   73:
+function _Z11testeDomainv called 1 returned 100% blocks executed 100%
+        1:   74:void testeDomain()
+        -:   75:{
+        1:   76:    test_get_set();
+        1:   76-block  0
+call    0 returned 1
+        1:   77:}
+        -:   78:
+        -:   79:

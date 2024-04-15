@@ -1,0 +1,5 @@
+C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug-coverage/CMakeFiles/inchiriere_masini.dir
+C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
+C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug-coverage/CMakeFiles/inchiriere_masini_autogen_timestamp_deps.dir
+C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug-coverage/CMakeFiles/inchiriere_masini_autogen.dir

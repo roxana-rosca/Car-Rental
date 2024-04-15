@@ -1,0 +1,355 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Export.cpp
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Export.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Export.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Export.h"
+        -:    2:#include "Car.h"
+        -:    3:#include <fstream>
+        -:    4:#include <string>
+        -:    5:#include <vector>
+        -:    6:
+function _Z11exportToCVSRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorI3CarSaIS8_EE called 2 returned 50% blocks executed 68%
+        2:    7:void exportToCVS(const std::string &fName, const std::vector<Car>& cars)
+        -:    8:{
+        2:    9:    std::ofstream out(fName, std::ios::trunc);
+        2:    9-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   10:    if(!out.is_open())
+        2:   10-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   10-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        -:   11:    {
+        1:   12:        throw RepositoryException("Unable to open file: "+fName+"!\n");
+        1:   12-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   12-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   12-block  2
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   12-block  3
+call   11 never executed
+    $$$$$:   12-block  4
+    $$$$$:   12-block  5
+call   12 never executed
+        -:   13:    }
+        4:   14:    for(const auto &c:cars)
+        1:   14-block  0
+call    0 returned 1
+call    1 returned 1
+        3:   14-block  1
+call    2 returned 3
+        4:   14-block  2
+call    3 returned 4
+branch  4 taken 3
+branch  5 taken 1 (fallthrough)
+        -:   15:    {
+        3:   16:        out<<c.get_nr_inmatriculare()<<","<<c.get_producator()<<","<<c.get_model()<<","<<c.get_tip()<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   16-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   16-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   16-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   16-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   16-block  4
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:   16-block  5
+call   18 returned 3
+branch 19 taken 3 (fallthrough)
+branch 20 taken 0 (throw)
+        3:   16-block  6
+call   21 returned 3
+branch 22 taken 3 (fallthrough)
+branch 23 taken 0 (throw)
+        3:   16-block  7
+call   24 returned 3
+branch 25 taken 3 (fallthrough)
+branch 26 taken 0 (throw)
+        3:   16-block  8
+call   27 returned 3
+branch 28 taken 3 (fallthrough)
+branch 29 taken 0 (throw)
+        3:   16-block  9
+call   30 returned 3
+branch 31 taken 3 (fallthrough)
+branch 32 taken 0 (throw)
+        3:   16-block 10
+call   33 returned 3
+branch 34 taken 3 (fallthrough)
+branch 35 taken 0 (throw)
+        3:   16-block 11
+call   36 returned 3
+call   37 returned 3
+call   38 returned 3
+call   39 returned 3
+call   40 returned 3
+    $$$$$:   16-block 12
+call   41 never executed
+    $$$$$:   16-block 13
+    $$$$$:   16-block 14
+call   42 never executed
+    $$$$$:   16-block 15
+    $$$$$:   16-block 16
+call   43 never executed
+    $$$$$:   16-block 17
+    $$$$$:   16-block 18
+call   44 never executed
+    $$$$$:   16-block 19
+        -:   17:    }
+        1:   18:    out.close();
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   19:}
+        1:   19-block  0
+call    0 returned 1
+        1:   19-block  1
+call    1 returned 1
+        -:   20:
+function _Z12exportToHTMLRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKSt6vectorI3CarSaIS8_EE called 2 returned 50% blocks executed 76%
+        2:   21:void exportToHTML(const std::string& fName, const std::vector<Car>& cars)
+        -:   22:{
+        2:   23:    std::ofstream out(fName, std::ios::trunc);
+        2:   23-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24:    if(!out.is_open())
+        2:   24-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        -:   25:    {
+        1:   26:        throw RepositoryException("Unable to open file: "+fName+"!\n");
+        1:   26-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   26-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   26-block  2
+call    7 returned 1
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   26-block  3
+call   11 never executed
+    $$$$$:   26-block  4
+    $$$$$:   26-block  5
+call   12 never executed
+        -:   27:    }
+        -:   28:
+        1:   29:    out<<"<html><body>"<<endl;
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30:    out<<R"(<table border="1" style="width:100% ">)"<<endl;
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   31:    //out<<"<table border=\"1\" style=\"width:100 % \">"<<endl;
+        4:   32:    for(const auto&c:cars)
+        1:   32-block  0
+call    0 returned 1
+call    1 returned 1
+        3:   32-block  1
+call    2 returned 3
+        3:   32-block  2
+call    3 returned 3
+        4:   32-block  3
+call    4 returned 4
+branch  5 taken 3
+branch  6 taken 1 (fallthrough)
+        -:   33:    {
+        3:   34:        out<<"<tr>"<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   34-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   35:        out<<"<td>"<<c.get_nr_inmatriculare()<<"</td>"<<endl;
+        3:   35-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   35-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   35-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   35-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   35-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   35-block  5
+call   15 returned 3
+    $$$$$:   35-block  6
+call   16 never executed
+    $$$$$:   35-block  7
+        3:   36:        out<<"<td>"<<c.get_producator()<<"</td>"<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   36-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   36-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   36-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   36-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   36-block  4
+call   15 returned 3
+    $$$$$:   36-block  5
+call   16 never executed
+    $$$$$:   36-block  6
+        3:   37:        out<<"<td>"<<c.get_model()<<"</td>"<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   37-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   37-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   37-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   37-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   37-block  4
+call   15 returned 3
+    $$$$$:   37-block  5
+call   16 never executed
+    $$$$$:   37-block  6
+        3:   38:        out<<"<td>"<<c.get_tip()<<"</td>"<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   38-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:   38-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   38-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:   38-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:   38-block  4
+call   15 returned 3
+    $$$$$:   38-block  5
+call   16 never executed
+    $$$$$:   38-block  6
+        3:   39:        out<<"</tr>"<<endl;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   39-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   40:    }
+        1:   41:    out<<"</table>"<<endl;
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   41-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   42:    out<<"</body></html>"<<endl;
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   42-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   43:    out.close();
+        1:   43-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   44:
+        2:   45:}
+        1:   45-block  0
+call    0 returned 1
+        1:   45-block  1
+call    1 returned 1

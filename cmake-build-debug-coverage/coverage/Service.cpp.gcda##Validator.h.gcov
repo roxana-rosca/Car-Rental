@@ -1,0 +1,192 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Validator.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include <utility>
+        -:    4:#include <vector>
+        -:    5:#include <string>
+        -:    6:
+        -:    7:using std::string;
+        -:    8:using std::vector;
+        -:    9:
+        -:   10:class ValidationException{
+        -:   11:    vector<string> errorMsg;
+        -:   12:public:
+function _ZN19ValidationExceptionC1ESt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 5 returned 100% blocks executed 100%
+        5:   13:    explicit ValidationException(vector<string> errorMessages): errorMsg{std::move(errorMessages)}{};
+        5:   13-block  0
+call    0 returned 5
+call    1 returned 5
+        -:   14:
+function _ZN19ValidationException16getErrorMessagesB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   15:    string getErrorMessages(){
+    #####:   16:        string fullMsg;
+    %%%%%:   16-block  0
+call    0 never executed
+    #####:   17:        for(const string& e:errorMsg)
+call    0 never executed
+call    1 never executed
+    %%%%%:   17-block  0
+call    2 never executed
+    %%%%%:   17-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   18:        {
+    #####:   19:            fullMsg+=e+"\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   19-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   19-block  1
+call    6 never executed
+call    7 never executed
+    $$$$$:   19-block  2
+call    8 never executed
+    $$$$$:   19-block  3
+        -:   20:        }
+    #####:   21:        return fullMsg;}
+    %%%%%:   21-block  0
+    %%%%%:   21-block  1
+    $$$$$:   21-block  2
+call    0 never executed
+        -:   22:};
+        -:   23:
+        -:   24:/*
+        -:   25: * Clasa pentru validarea masinilor
+        -:   26: * O masina este valida daca:
+        -:   27: *  are un numar de inmatriculare format din cel putin 6 caractere si cel mult 8 caractere
+        -:   28: *  producatorul are mai mult de 2 caractere
+        -:   29: *  modelul nu este vid
+        -:   30: *  tipul nu este vid
+        -:   31: */
+        -:   32:class Validator{
+        -:   33:public:
+function _ZN9Validator16valideaza_masinaERK3Car called 83 returned 95% blocks executed 81%
+       83:   34:    static void valideaza_masina(const Car& c)
+        -:   35:    {
+       83:   36:        vector<string> errors;
+       83:   36-block  0
+call    0 returned 83
+       83:   37:        if(c.get_nr_inmatriculare().size() < 6 || c.get_nr_inmatriculare().size() > 8)
+call    0 returned 83
+branch  1 taken 83 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   37-block  0
+call    3 returned 83
+branch  4 taken 83 (fallthrough)
+branch  5 taken 0
+       83:   37-block  1
+call    6 returned 83
+branch  7 taken 83 (fallthrough)
+branch  8 taken 0 (throw)
+       83:   37-block  2
+call    9 returned 83
+branch 10 taken 1 (fallthrough)
+branch 11 taken 82
+        1:   37-block  3
+       82:   37-block  4
+       83:   37-block  5
+branch 12 taken 83 (fallthrough)
+branch 13 taken 0
+       83:   37-block  6
+call   14 returned 83
+       83:   37-block  7
+branch 15 taken 83 (fallthrough)
+branch 16 taken 0
+       83:   37-block  8
+call   17 returned 83
+       83:   37-block  9
+branch 18 taken 1 (fallthrough)
+branch 19 taken 82
+    $$$$$:   37-block 10
+branch 20 never executed
+branch 21 never executed
+    $$$$$:   37-block 11
+call   22 never executed
+    $$$$$:   37-block 12
+    $$$$$:   37-block 13
+branch 23 never executed
+branch 24 never executed
+    $$$$$:   37-block 14
+call   25 never executed
+    $$$$$:   37-block 15
+        1:   38:            errors.emplace_back("Numarul de inmatriculare este invalid!");
+        1:   38-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   39:        if(c.get_producator().size() <= 2)
+       83:   39-block  0
+call    0 returned 83
+branch  1 taken 83 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   39-block  1
+call    3 returned 83
+call    4 returned 83
+branch  5 taken 1 (fallthrough)
+branch  6 taken 82
+        1:   40:            errors.emplace_back("Producator invalid!");
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   41:        if(c.get_model().empty())
+       83:   41-block  0
+call    0 returned 83
+branch  1 taken 83 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   41-block  1
+call    3 returned 83
+call    4 returned 83
+branch  5 taken 2 (fallthrough)
+branch  6 taken 81
+        2:   42:            errors.emplace_back("Modelul nu poate sa fie vid!");
+        2:   42-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   43:        if(c.get_tip().empty())
+       83:   43-block  0
+call    0 returned 83
+branch  1 taken 83 (fallthrough)
+branch  2 taken 0 (throw)
+       83:   43-block  1
+call    3 returned 83
+call    4 returned 83
+branch  5 taken 1 (fallthrough)
+branch  6 taken 82
+        1:   44:            errors.emplace_back("Tipul masinii nu poate sa fie vid!");
+        1:   44-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   45:
+       83:   46:        if(!errors.empty())
+       83:   46-block  0
+call    0 returned 83
+branch  1 taken 4 (fallthrough)
+branch  2 taken 79
+        4:   47:            throw ValidationException(errors);
+        4:   47-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   47-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+    $$$$$:   47-block  2
+call    7 never executed
+       83:   48:    }
+       79:   48-block  0
+call    0 returned 79
+        4:   48-block  1
+call    1 returned 4
+        -:   49:};

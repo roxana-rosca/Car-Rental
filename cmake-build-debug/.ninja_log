@@ -1,0 +1,18 @@
+# ninja log v5
+865	5988	7055106320811028	CMakeFiles/inchiriere_masini.dir/main.cpp.obj	ce58bc35451a785b
+1116	2078	7055106281668615	CMakeFiles/inchiriere_masini.dir/Car.cpp.obj	882d7ddfbcf39f73
+7717	8495	7055106345841357	inchiriere_masini.exe	2f8a4c5fee52c5f2
+989	3458	7055106295494238	CMakeFiles/inchiriere_masini.dir/UI.cpp.obj	91c9a4387ae5517b
+1834	5160	7055106312481878	CMakeFiles/inchiriere_masini.dir/Service.cpp.obj	6afa00d414b2bd85
+882	3620	7055106297085868	CMakeFiles/inchiriere_masini.dir/Repository.cpp.obj	4c2433aec08f4e0e
+9	1109	7084706728340538	build.ninja	a624afd196a8a67e
+15	856	7055106266127830	inchiriere_masini_autogen/timestamp	5b84ecde9a7e2e8f
+15	856	7055106266127830	inchiriere_masini_autogen/mocs_compilation.cpp	5b84ecde9a7e2e8f
+15	856	7055106266127830	C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug/inchiriere_masini_autogen/timestamp	5b84ecde9a7e2e8f
+2079	3412	7055106295029785	CMakeFiles/inchiriere_masini.dir/Export.cpp.obj	377aa93c8ad41d3f
+15	856	7055106266127830	C:/Users/roxan/CLionProjects/oop/inchiriere_masini_QT/cmake-build-debug/inchiriere_masini_autogen/mocs_compilation.cpp	5b84ecde9a7e2e8f
+859	988	7055106270804437	CMakeFiles/inchiriere_masini.dir/inchiriere_masini_autogen/mocs_compilation.cpp.obj	ac54d0f1e2a714f6
+873	1115	7055106272054814	CMakeFiles/inchiriere_masini.dir/VectorDinamicTemplate.cpp.obj	65d4d454e0276b9e
+891	2847	7055106289375708	CMakeFiles/inchiriere_masini.dir/ListaDeLucru.cpp.obj	df10e917eefb9718
+900	1834	7055106279243571	CMakeFiles/inchiriere_masini.dir/DTO.cpp.obj	d1af12844d9236aa
+2849	7716	7055106338084430	CMakeFiles/inchiriere_masini.dir/GUI.cpp.obj	2d1133bb5750c40a

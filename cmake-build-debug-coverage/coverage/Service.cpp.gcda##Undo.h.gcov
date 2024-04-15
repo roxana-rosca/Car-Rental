@@ -1,0 +1,119 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Undo.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include "Repository.h"
+        -:    4:
+        -:    5:class ActiuneUndo{
+        -:    6:public:
+        -:    7:    // functie pur virtuala-toate clasele derivate vor defini metoda
+        -:    8:    virtual void doUndo()=0;
+        -:    9:
+        -:   10:    // Destructor
+function _ZN11ActiuneUndoD2Ev called 82 returned 100% blocks executed 100%
+       82:   11:    virtual ~ActiuneUndo()=default;
+        -:   12:};
+        -:   13:
+        -:   14:
+        -:   15:class UndoAdauga:public ActiuneUndo{
+        -:   16:    Car masinaAdaugata;
+        -:   17:    //Repository& repo;
+        -:   18:    AbstractRepo& repo;
+        -:   19:public:
+        -:   20:    // Constructor
+function _ZN10UndoAdaugaC1ER12AbstractRepoRK3Car called 78 returned 100% blocks executed 80%
+       78:   21:    UndoAdauga(AbstractRepo& repo, const Car& c):masinaAdaugata{c}, repo{repo}{};
+       78:   21-block  0
+call    0 returned 78
+call    1 returned 78
+branch  2 taken 78 (fallthrough)
+branch  3 taken 0 (throw)
+       78:   21-block  1
+    $$$$$:   21-block  2
+call    4 never executed
+        -:   22:
+function _ZN10UndoAdauga6doUndoEv called 4 returned 100% blocks executed 71%
+        4:   23:    void doUndo() override{
+        4:   24:        repo.deleteCar(masinaAdaugata.get_nr_inmatriculare());
+        4:   24-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   24-block  1
+call    4 returned 4
+    $$$$$:   24-block  2
+call    5 never executed
+        4:   25:    }
+        -:   26:};
+        -:   27:
+        -:   28:
+        -:   29:class UndoSterge:public ActiuneUndo{
+        -:   30:    Car masinaStearsa;
+        -:   31:    //Repository& repo;
+        -:   32:    AbstractRepo& repo;
+        -:   33:public:
+        -:   34:    // Constructor
+function _ZN10UndoStergeC1ER12AbstractRepoRK3Car called 2 returned 100% blocks executed 80%
+        2:   35:    UndoSterge(AbstractRepo& repo, const Car& c):masinaStearsa{c}, repo{repo}{};
+        2:   35-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   35-block  1
+    $$$$$:   35-block  2
+call    4 never executed
+        -:   36:
+function _ZN10UndoSterge6doUndoEv called 1 returned 100% blocks executed 100%
+        1:   37:    void doUndo() override{
+        1:   38:        repo.store(masinaStearsa);
+        1:   38-block  0
+call    0 returned 1
+        1:   39:    }
+        -:   40:};
+        -:   41:
+        -:   42:
+        -:   43:class UndoModifica:public ActiuneUndo{
+        -:   44:    Car masinaModificata;
+        -:   45:    Car masinaNoua;
+        -:   46:    //Repository& repo;
+        -:   47:    AbstractRepo& repo;
+        -:   48:public:
+        -:   49:    // Constructor
+function _ZN12UndoModificaC1ER12AbstractRepoRK3CarS4_ called 2 returned 100% blocks executed 62%
+        2:   50:    UndoModifica(AbstractRepo& repo, const Car& c, const Car& new_car):masinaModificata{c}, masinaNoua{new_car}, repo{repo}{};
+        2:   50-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   50-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   50-block  2
+    $$$$$:   50-block  3
+call    7 never executed
+    $$$$$:   50-block  4
+call    8 never executed
+        -:   51:
+function _ZN12UndoModifica6doUndoEv called 1 returned 100% blocks executed 75%
+        1:   52:    void doUndo() override{
+        1:   53:        repo.deleteCar(masinaNoua.get_nr_inmatriculare());
+        1:   53-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   53-block  1
+call    4 returned 1
+    $$$$$:   53-block  2
+call    5 never executed
+        1:   54:        repo.store(masinaModificata);
+call    0 returned 1
+        1:   55:    }
+        -:   56:};
+        -:   57:

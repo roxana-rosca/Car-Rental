@@ -1,0 +1,315 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/VectorDinamicTemplate.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\VectorDinamicTemplate.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\VectorDinamicTemplate.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <assert.h>
+        -:    3:
+        -:    4:constexpr auto INITIAL_CAPACITY = 5;
+        -:    5:template<typename T>
+        -:    6:class IteratorVector; // forward declaration -  avem nevoie de a implementa anumite metode in clasa VectorDinamic care se bazeaza pe iterator
+        -:    7:
+        -:    8:template<typename T>
+        -:    9:class VectorDinamic{
+        -:   10:private:
+        -:   11:    // reprezentare
+        -:   12:    T* elems;
+        -:   13:    int capacitate;
+        -:   14:    int lungime;
+        -:   15:
+        -:   16:    //resize
+        -:   17:    void resize();
+        -:   18:public:
+        -:   19:    // Constructor
+        -:   20:    VectorDinamic();
+        -:   21:
+        -:   22:    // Constructor copiere
+        -:   23:    VectorDinamic(const VectorDinamic& ot);
+        -:   24:
+        -:   25:    // Assignment operator
+        -:   26:    VectorDinamic& operator=(const VectorDinamic& ot);
+        -:   27:
+        -:   28:    // Destructor
+        -:   29:    ~VectorDinamic();
+        -:   30:
+        -:   31:    // add element in vector
+        -:   32:    void add(T elem);
+        -:   33:
+        -:   34:    // get element on position in vector
+        -:   35:    T& get(int poz);
+        -:   36:
+        -:   37:    // set element on position in vector
+        -:   38:    void set(T elem, int poz);
+        -:   39:
+        -:   40:    // get size - length of vector
+        -:   41:    int size();
+        -:   42:
+        -:   43:    // iterator methods
+        -:   44:    friend class IteratorVector<T>;
+        -:   45:
+        -:   46:    // pentru a putea folosi for each
+        -:   47:    IteratorVector<T> begin();
+        -:   48:    IteratorVector<T> end();
+        -:   49:
+        -:   50:    // stergerea unui element de pe pozitia poz
+        -:   51:    void erase(int poz);
+        -:   52:
+        -:   53:};
+        -:   54:
+        -:   55:template<typename T>
+        -:   56:class IteratorVector{
+        -:   57:private:
+        -:   58:    const VectorDinamic<T>& vec;
+        -:   59:    int poz=0;
+        -:   60:public:
+        -:   61:    explicit IteratorVector(const VectorDinamic<T>& v) noexcept;
+        -:   62:    IteratorVector(const VectorDinamic<T>& v, int poz) noexcept;
+        -:   63:    [[nodiscard]] bool valid() const;
+        -:   64:    T& element() const;
+        -:   65:    void next();
+        -:   66:    T& operator*();
+        -:   67:    IteratorVector& operator++();
+        -:   68:    bool operator==(const IteratorVector& ot) noexcept;
+        -:   69:    bool operator!=(const IteratorVector& ot) noexcept;
+        -:   70:};
+        -:   71:
+        -:   72:template<typename T>
+function _ZN13VectorDinamicIiEC1Ev called 3 returned 100% blocks executed 100%
+        3:   73:VectorDinamic<T>::VectorDinamic() {
+        3:   74:    this->elems = new T[INITIAL_CAPACITY];
+        3:   74-block  0
+call    0 returned 3
+        3:   75:    this->lungime = 0;
+        3:   76:    this->capacitate = INITIAL_CAPACITY;
+        3:   77:}
+        -:   78:
+        -:   79:template<typename T>
+        -:   80:VectorDinamic<T>::VectorDinamic(const VectorDinamic& ot) {
+        -:   81:    // Constructor de copiere
+        -:   82:    // se creeaza un nou vector dinamic pe baza unuia existent
+        -:   83:
+        -:   84:    // alocare capacitate
+        -:   85:    this->elems = new T[ot.capacitate];
+        -:   86:
+        -:   87:    // copiem elementele, setam lungime, valoare
+        -:   88:    for(int i = 0; i < ot.lungime; i++)
+        -:   89:    {
+        -:   90:        this->elems[i] = ot.elems[i];
+        -:   91:    }
+        -:   92:    this->lungime = ot.lungime;
+        -:   93:    this->capacitate = ot.capacitate;
+        -:   94:}
+        -:   95:
+        -:   96:template<typename T>
+function _ZN13VectorDinamicIiEaSERKS0_ called 2 returned 100% blocks executed 92%
+        2:   97:VectorDinamic<T>& VectorDinamic<T>::operator=(const VectorDinamic<T> &ot) {
+        -:   98:    // daca v1=v1 nu are sens sa facem op de mai jos
+        2:   99:    if(this == &ot){
+        2:   99-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  100:        return *this;
+        1:  100-block  0
+        -:  101:    }
+        -:  102:
+        -:  103:    // fiindca in obiectul curent punem altceva prin assignment, eliberam memoria alocata anterior
+        1:  104:    delete[] this->elems;
+        1:  104-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  104-block  1
+call    2 returned 1
+        -:  105:
+        -:  106:    // copiem elementele din ot si setam lungime, capacitate
+       1*:  107:    this->elems = new T[ot.capacitate];
+        1:  107-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  107-block  1
+    %%%%%:  107-block  2
+call    2 never executed
+        1:  107-block  3
+call    3 returned 1
+        3:  108:    for(int i = 0; i < ot.lungime; i++){
+        3:  108-block  0
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:  109:        elems[i] = ot.elems[i];
+        2:  109-block  0
+        -:  110:    }
+        1:  111:    this->lungime = ot.lungime;
+        1:  112:    this->capacitate = ot.capacitate;
+        1:  113:    return *this;
+        1:  113-block  0
+        -:  114:}
+        -:  115:
+        -:  116:template<typename T>
+function _ZN13VectorDinamicIiE6resizeEv called 1 returned 100% blocks executed 90%
+        1:  117:void VectorDinamic<T>::resize() {
+        1:  118:    int newCapacity = this->capacitate * 2;
+       1*:  119:    T* newElems = new T[newCapacity];
+        1:  119-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  119-block  1
+    %%%%%:  119-block  2
+call    2 never executed
+        1:  119-block  3
+call    3 returned 1
+        6:  120:    for(int i = 0; i < this->lungime; i++){
+        6:  120-block  0
+branch  0 taken 5
+branch  1 taken 1 (fallthrough)
+        5:  121:        newElems[i] = this->elems[i];
+        5:  121-block  0
+        -:  122:    }
+        1:  123:    delete[] this->elems;
+        1:  123-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  123-block  1
+call    2 returned 1
+        1:  124:    this->elems = newElems;
+        1:  125:    this->capacitate = newCapacity;
+        1:  126:}
+        -:  127:
+        -:  128:template<typename T>
+function _ZN13VectorDinamicIiED1Ev called 3 returned 100% blocks executed 100%
+        3:  129:VectorDinamic<T>::~VectorDinamic(){
+        3:  130:    delete[] this->elems;
+        3:  130-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:  130-block  1
+call    2 returned 3
+        3:  131:}
+        -:  132:
+        -:  133:template<typename T>
+function _ZN13VectorDinamicIiE3addEi called 10 returned 100% blocks executed 100%
+       10:  134:void VectorDinamic<T>::add(T elem){
+       10:  135:    if(this->lungime == this->capacitate)
+       10:  135-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 9
+        1:  136:        resize();
+        1:  136-block  0
+call    0 returned 1
+       10:  137:    this->elems[this->lungime] = elem;
+       10:  138:    this->lungime++;
+       10:  139:}
+        -:  140:
+        -:  141:template<typename T>
+        -:  142:T& VectorDinamic<T>::get(int poz) {
+        -:  143:    // verificare pozitie valida
+        -:  144:    return this->elems[poz];
+        -:  145:}
+        -:  146:
+        -:  147:template<typename T>
+        -:  148:void VectorDinamic<T>::set(T elem, int poz) {
+        -:  149:    // verificare pozitie valida
+        -:  150:
+        -:  151:    this->elems[poz] = elem;
+        -:  152:}
+        -:  153:
+        -:  154:template<typename T>
+function _ZN13VectorDinamicIiE4sizeEv called 3 returned 100% blocks executed 100%
+        3:  155:int VectorDinamic<T>::size() {
+        3:  156:    return this->lungime;
+        3:  156-block  0
+        -:  157:}
+        -:  158:
+        -:  159:template<typename T>
+function _ZN13VectorDinamicIiE5eraseEi called 1 returned 100% blocks executed 100%
+        1:  160:void VectorDinamic<T>::erase(int poz){
+        3:  161:    for(int i = poz; i < this->lungime-1; i++)
+        1:  161-block  0
+        3:  161-block  1
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        -:  162:    {
+        2:  163:        this->elems[i] = this->elems[i+1];
+        2:  163-block  0
+        -:  164:    }
+        1:  165:    this->lungime--;
+        1:  166:}
+        -:  167:
+        -:  168:
+        -:  169:template<typename T>
+function _ZN13VectorDinamicIiE5beginEv called 1 returned 100% blocks executed 100%
+        1:  170:IteratorVector<T> VectorDinamic<T>::begin() {
+        1:  171:    return IteratorVector<T>(*this);
+        1:  171-block  0
+call    0 returned 1
+        -:  172:}
+        -:  173:
+        -:  174:template<typename T>
+function _ZN13VectorDinamicIiE3endEv called 5 returned 100% blocks executed 100%
+        5:  175:IteratorVector<T>VectorDinamic<T>::end(){
+        5:  176:    return IteratorVector<T>(*this, this->lungime);
+        5:  176-block  0
+call    0 returned 5
+        -:  177:}
+        -:  178:
+        -:  179:
+        -:  180:template<typename T>
+function _ZN14IteratorVectorIiEC1ERK13VectorDinamicIiE called 3 returned 100% blocks executed 100%
+        3:  181:IteratorVector<T>::IteratorVector(const VectorDinamic<T> &v) noexcept: vec{v}{};
+        -:  182:
+        -:  183:template<typename T>
+function _ZN14IteratorVectorIiEC1ERK13VectorDinamicIiEi called 5 returned 100% blocks executed 100%
+        5:  184:IteratorVector<T>::IteratorVector(const VectorDinamic<T> &v, int poz) noexcept: vec{v}, poz{poz} {};
+        -:  185:
+        -:  186:template<typename T>
+function _ZNK14IteratorVectorIiE5validEv called 4 returned 100% blocks executed 100%
+        4:  187:bool IteratorVector<T>::valid() const {
+        4:  188:    return this->poz < this->vec.lungime;
+        4:  188-block  0
+        -:  189:}
+        -:  190:
+        -:  191:template<typename T>
+function _ZNK14IteratorVectorIiE7elementEv called 9 returned 100% blocks executed 100%
+        9:  192:T& IteratorVector<T>::element() const {
+        9:  193:    return this->vec.elems[this->poz];
+        9:  193-block  0
+        -:  194:}
+        -:  195:
+        -:  196:template<typename T>
+function _ZN14IteratorVectorIiE4nextEv called 9 returned 100% blocks executed 100%
+        9:  197:void IteratorVector<T>::next() {
+        9:  198:    this->poz++;
+        9:  199:}
+        -:  200:
+        -:  201:template<typename T>
+function _ZN14IteratorVectorIiEdeEv called 6 returned 100% blocks executed 100%
+        6:  202:T& IteratorVector<T>::operator*() {
+        6:  203:    return this->element();
+        6:  203-block  0
+call    0 returned 6
+        -:  204:}
+        -:  205:
+        -:  206:template<typename T>
+function _ZN14IteratorVectorIiEppEv called 6 returned 100% blocks executed 100%
+        6:  207:IteratorVector<T>& IteratorVector<T>::operator++() {
+        6:  208:    this->next();
+        6:  208-block  0
+call    0 returned 6
+        6:  209:    return *this;
+        -:  210:}
+        -:  211:
+        -:  212:template<typename T>
+function _ZN14IteratorVectorIiEeqERKS0_ called 8 returned 100% blocks executed 100%
+        8:  213:bool IteratorVector<T>::operator==(const IteratorVector<T> &ot) noexcept {
+        8:  214:    return this->poz == ot.poz;
+        8:  214-block  0
+        -:  215:}
+        -:  216:
+        -:  217:template<typename T>
+function _ZN14IteratorVectorIiEneERKS0_ called 8 returned 100% blocks executed 100%
+        8:  218:bool IteratorVector<T>::operator!=(const IteratorVector<T> &ot) noexcept {
+        8:  219:    return !(*this == ot); // nu merge cu expresia simplificata
+        8:  219-block  0
+call    0 returned 8
+        -:  220:}
+        -:  221:
+        -:  222:void testVectorDinamic();
+        -:  223:void testAssignmentOperator();

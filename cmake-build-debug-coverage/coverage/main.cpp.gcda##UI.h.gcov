@@ -1,0 +1,40 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/UI.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Service.h"
+        -:    3:
+        -:    4:
+        -:    5:class UI {
+        -:    6:private:
+        -:    7:    Service& srv;
+        -:    8:public:
+        -:    9:    // Constructor
+function _ZN2UIC1ER7Service called 1 returned 100% blocks executed 100%
+        1:   10:    explicit UI(Service& srv): srv{srv}{};
+        -:   11:
+        -:   12:    // Constructor de copiere
+        -:   13:    UI(const UI& ot) = delete;
+        -:   14:
+        -:   15:    static void printMenu();
+        -:   16:    void uiAdd();
+        -:   17:    void addDefaultCars();
+        -:   18:    //static void printCars(VectorDinamic<Car> allCars);
+        -:   19:    static void printCars(const vector<Car> &allCars);
+        -:   20:    void run();
+        -:   21:    void uiFilter();
+        -:   22:    void uiSort();
+        -:   23:    void uiFind();
+        -:   24:    void uiDelete();
+        -:   25:    void uiModify();
+        -:   26:
+        -:   27:    static void printListaDeLucruMenu();
+        -:   28:    void uiListaDeLucru();
+        -:   29:    void uiAddListaDeLucru();
+        -:   30:    void uiAddRandomToListaDeLucru();
+        -:   31:    void uiEmptyListaDeLucru();
+        -:   32:    void uiCreeazaRaport();
+        -:   33:    void uiUndo();
+        -:   34:};
+        -:   35:

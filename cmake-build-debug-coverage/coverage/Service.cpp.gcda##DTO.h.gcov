@@ -1,0 +1,39 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/DTO.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <iostream>
+        -:    3:#include <utility>
+        -:    4:#include <cstring>
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:class DTO {
+        -:    9:private:
+        -:   10:    string model;
+        -:   11:    int count{};
+        -:   12:
+        -:   13:public:
+        -:   14:
+function _ZN3DTOC1Ev called 0 returned 0% blocks executed 0%
+    #####:   15:    DTO()=default;
+    %%%%%:   15-block  0
+call    0 never executed
+        -:   16:
+        -:   17:    // Constructor
+function _ZN3DTOC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 7 returned 100% blocks executed 100%
+        7:   18:    explicit DTO(string m)
+        7:   19:    {
+        7:   19-block  0
+call    0 returned 7
+        7:   20:        model=std::move(m);
+call    0 returned 7
+call    1 returned 7
+        7:   21:        count=1;
+        7:   22:    }
+        -:   23:
+        -:   24:    [[nodiscard]] int get_count() const;
+        -:   25:
+        -:   26:    void inc_count();
+        -:   27:};

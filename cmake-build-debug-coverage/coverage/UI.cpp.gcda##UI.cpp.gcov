@@ -1,0 +1,2146 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/UI.cpp
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "UI.h"
+        -:    2:#include <iostream>
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+function _ZN2UI9printMenuEv called 1 returned 100% blocks executed 100%
+        1:    6:void UI::printMenu() {
+        1:    7:    cout<<"    -MENIU-"<<endl;
+        1:    7-block  0
+call    0 returned 1
+call    1 returned 1
+        1:    8:    cout<<"1. Adauga masina.\n";
+call    0 returned 1
+        1:    9:    cout<<"2. Afiseaza masini.\n";
+call    0 returned 1
+        1:   10:    cout<<"3. Filtrare.\n";
+call    0 returned 1
+        1:   11:    cout<<"4. Sortare.\n";
+call    0 returned 1
+        1:   12:    cout<<"5. Cauta masina.\n";
+call    0 returned 1
+        1:   13:    cout<<"6. Sterge masina.\n";
+call    0 returned 1
+        1:   14:    cout<<"7. Modifica numar de inmatriculare.\n";
+call    0 returned 1
+        1:   15:    cout<<"8. Lista de lucru.\n";
+call    0 returned 1
+        1:   16:    cout<<"9. Raport.\n";
+call    0 returned 1
+        1:   17:    cout<<"10. UNDO.\n";
+call    0 returned 1
+        1:   18:    cout<<"0. Iesire.\n";
+call    0 returned 1
+        1:   19:}
+        -:   20:
+function _ZN2UI5uiAddEv called 0 returned 0% blocks executed 0%
+    #####:   21:void UI::uiAdd() {
+    #####:   22:    string nr_inmatriculare, producator, model, tip;
+    %%%%%:   22-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:   23:
+    #####:   24:    cout<<"Adaugati o noua masina!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   25:
+    #####:   26:    cout<<"Numar de inmatriculare: ";
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   27:    getline(cin>>ws, nr_inmatriculare);
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   27-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   28:
+    #####:   29:    cout<<"Producator: ";
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:    getline(cin>>ws, producator);
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   30-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   31:
+    #####:   32:    cout<<"Model: ";
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   33:    getline(cin>>ws, model);
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   33-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   34:
+    #####:   35:    cout<<"Tip: ";
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36:    getline(cin>>ws, tip);
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   36-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   37:
+        -:   38:    try{
+    #####:   39:        srv.addCar(nr_inmatriculare,producator,model,tip);
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   39-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   39-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   39-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   39-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   39-block  5
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:   39-block  6
+call   19 never executed
+    $$$$$:   39-block  7
+    $$$$$:   39-block  8
+call   20 never executed
+    $$$$$:   39-block  9
+    $$$$$:   39-block 10
+call   21 never executed
+    $$$$$:   39-block 11
+    $$$$$:   39-block 12
+call   22 never executed
+    $$$$$:   39-block 13
+        -:   40:    }
+    =====:   41:    catch (RepositoryException& re)
+    $$$$$:   41-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   41-block  1
+call    3 never executed
+        -:   42:    {
+    =====:   43:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   43-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   43-block  1
+call    6 never executed
+    $$$$$:   43-block  2
+call    7 never executed
+    $$$$$:   43-block  3
+    =====:   44:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   44-block  0
+call    3 never executed
+    =====:   45:    catch(ValidationException& ve)
+    $$$$$:   45-block  0
+call    0 never executed
+        -:   46:    {
+    =====:   47:        cout<<"Date invalide pentru masina!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   48:        cout<<ve.getErrorMessages();
+    $$$$$:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   48-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   48-block  2
+call    6 never executed
+    $$$$$:   48-block  3
+call    7 never executed
+    $$$$$:   48-block  4
+    =====:   49:    }
+call    0 never executed
+    $$$$$:   49-block  0
+call    1 never executed
+    #####:   50:}
+    %%%%%:   50-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:   50-block  1
+call    4 never executed
+    $$$$$:   50-block  2
+call    5 never executed
+    $$$$$:   50-block  3
+call    6 never executed
+    $$$$$:   50-block  4
+call    7 never executed
+        -:   51:
+function _ZN2UI9printCarsERKSt6vectorI3CarSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   52:void UI::printCars(const vector<Car> &allCars) {
+    #####:   53:    if(allCars.empty())
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   54:        cout<<"Nu exista masini.\n";
+    %%%%%:   54-block  0
+call    0 never executed
+        -:   55:    else
+        -:   56:    {
+    #####:   57:        cout<<"Numar masini din lista: "<<allCars.size()<<endl;
+    %%%%%:   57-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:   58:        for(const auto& car : allCars)
+call    0 never executed
+call    1 never executed
+    %%%%%:   58-block  0
+call    2 never executed
+    %%%%%:   58-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   59:        {
+    #####:   60:            cout<<"Producator: "<<car.get_producator()<<" | Model: "<<car.get_model()<<" | Tip: "<<car.get_tip()<<" | Numar de inmatriculare: "<<car.get_nr_inmatriculare()<<endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   60-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   60-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   60-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:   60-block  3
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   60-block  4
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:   60-block  5
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:   60-block  6
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:   60-block  7
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:   60-block  8
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    %%%%%:   60-block  9
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    %%%%%:   60-block 10
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+    %%%%%:   60-block 11
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   60-block 12
+call   39 never executed
+call   40 never executed
+call   41 never executed
+call   42 never executed
+call   43 never executed
+    $$$$$:   60-block 13
+call   44 never executed
+    $$$$$:   60-block 14
+    $$$$$:   60-block 15
+call   45 never executed
+    $$$$$:   60-block 16
+    $$$$$:   60-block 17
+call   46 never executed
+    $$$$$:   60-block 18
+    $$$$$:   60-block 19
+call   47 never executed
+    $$$$$:   60-block 20
+        -:   61:        }
+        -:   62:    }
+    #####:   63:}
+    %%%%%:   63-block  0
+        -:   64:
+function _ZN2UI8uiFilterEv called 0 returned 0% blocks executed 0%
+    #####:   65:void UI::uiFilter() {
+    #####:   66:    cout<<"Dupa ce criteriu doriti sa filtrati? (producator, tip):";
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   67:    string criteriu;
+    %%%%%:   67-block  0
+call    0 never executed
+    #####:   68:    cin>>criteriu;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   69:
+    #####:   70:    if(criteriu == "producator")
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   71:    {
+    #####:   72:        cout<<"Producatorul pentru care se filtreaza masinile: ";
+    %%%%%:   72-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   73:        string prod_cautat;
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:        cin>>prod_cautat;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:        printCars(srv.filtrareProducator(prod_cautat));
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   75-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   75-block  2
+call    6 never executed
+    $$$$$:   75-block  3
+call    7 never executed
+    $$$$$:   75-block  4
+    #####:   76:    }
+call    0 never executed
+    $$$$$:   76-block  0
+call    1 never executed
+    #####:   77:    else if(criteriu == "tip")
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   78:    {
+    #####:   79:        cout<<"Tipul dupa care filtreaza masinile: ";
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   80:        string tip_cautat;
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:        cin>>tip_cautat;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   82:        printCars(srv.filtrareTip(tip_cautat));
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   82-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   82-block  2
+call    6 never executed
+    $$$$$:   82-block  3
+call    7 never executed
+    $$$$$:   82-block  4
+    #####:   83:    }
+call    0 never executed
+    $$$$$:   83-block  0
+call    1 never executed
+        -:   84:    else
+    #####:   85:        cout<<"Nu se poate filtra dupa criteriul dat!"<<endl;
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   85-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   86:}
+    %%%%%:   86-block  0
+call    0 never executed
+    $$$$$:   86-block  1
+call    1 never executed
+        -:   87:
+function _ZN2UI6uiSortEv called 0 returned 0% blocks executed 0%
+    #####:   88:void UI::uiSort()
+        -:   89:{
+    #####:   90:    cout<<"Dupa ce criteriu doriti sa sortati? (numar inmatriculare -ni , tip - t, producator+model - pm)\n";
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   91:    string criteriu;
+    %%%%%:   91-block  0
+call    0 never executed
+    #####:   92:    cin>>criteriu;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   93:    if(criteriu == "ni")
+    %%%%%:   93-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   94:    {
+    #####:   95:        cout<<"Sortare dupa numar de inmatriculare:\n";
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   96:        printCars(srv.sortByPlateNumber());
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   96-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   96-block  2
+call    6 never executed
+    $$$$$:   96-block  3
+call    7 never executed
+    $$$$$:   96-block  4
+        -:   97:    }
+    #####:   98:    else if(criteriu == "t")
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   99:    {
+    #####:  100:        cout<<"Sortare dupa tipul masinii:\n";
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  101:        printCars(srv.sortByType());
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  101-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  101-block  2
+call    6 never executed
+    $$$$$:  101-block  3
+call    7 never executed
+    $$$$$:  101-block  4
+        -:  102:    }
+    #####:  103:    else if(criteriu == "pm")
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  104:    {
+    #####:  105:        cout<<"Sortare dupa producator + model:\n";
+    %%%%%:  105-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  106:        printCars(srv.sortByCompanyAndModel());
+    %%%%%:  106-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  106-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  106-block  2
+call    6 never executed
+    $$$$$:  106-block  3
+call    7 never executed
+    $$$$$:  106-block  4
+        -:  107:    }
+        -:  108:    else
+    #####:  109:        cout<<"Nu se poate sorta dupa criteriul dat!\n";
+    %%%%%:  109-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  110:}
+    %%%%%:  110-block  0
+call    0 never executed
+    $$$$$:  110-block  1
+call    1 never executed
+        -:  111:
+function _ZN2UI6uiFindEv called 0 returned 0% blocks executed 0%
+    #####:  112:void UI::uiFind() {
+    #####:  113:    cout<<"Cautati o masina dupa numarul de inmatriculare!\n";
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:    string nr_i;
+    %%%%%:  114-block  0
+call    0 never executed
+    #####:  115:    cout<<"Numar de inmatriculare: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  116:    cin>>nr_i;
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  117:    try{
+    #####:  118:        Car car=srv.findCar(nr_i);
+    %%%%%:  118-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  119:        cout<<"Masina cautata este:\n";
+    %%%%%:  119-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  120:        cout<<"Producator: "<<car.get_producator()<<" | Model: "<<car.get_model()<<" | Tip: "<<car.get_tip()<<" | Numar de inmatriculare: "<<car.get_nr_inmatriculare()<<endl;
+    %%%%%:  120-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  120-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  120-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  120-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  120-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  120-block  5
+call   15 never executed
+branch 16 never executed
+branch 17 never executed
+    %%%%%:  120-block  6
+call   18 never executed
+branch 19 never executed
+branch 20 never executed
+    %%%%%:  120-block  7
+call   21 never executed
+branch 22 never executed
+branch 23 never executed
+    %%%%%:  120-block  8
+call   24 never executed
+branch 25 never executed
+branch 26 never executed
+    %%%%%:  120-block  9
+call   27 never executed
+branch 28 never executed
+branch 29 never executed
+    %%%%%:  120-block 10
+call   30 never executed
+branch 31 never executed
+branch 32 never executed
+    %%%%%:  120-block 11
+call   33 never executed
+branch 34 never executed
+branch 35 never executed
+    %%%%%:  120-block 12
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:  120-block 13
+call   39 never executed
+call   40 never executed
+call   41 never executed
+call   42 never executed
+    $$$$$:  120-block 14
+call   43 never executed
+    $$$$$:  120-block 15
+    $$$$$:  120-block 16
+call   44 never executed
+    $$$$$:  120-block 17
+    $$$$$:  120-block 18
+call   45 never executed
+    $$$$$:  120-block 19
+    $$$$$:  120-block 20
+call   46 never executed
+    $$$$$:  120-block 21
+        -:  121:
+    #####:  122:    }
+call    0 never executed
+    $$$$$:  122-block  0
+call    1 never executed
+    =====:  123:    catch (RepositoryException& re)
+    $$$$$:  123-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  123-block  1
+call    2 never executed
+        -:  124:    {
+    =====:  125:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  125-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  125-block  1
+call    6 never executed
+    $$$$$:  125-block  2
+call    7 never executed
+    $$$$$:  125-block  3
+    =====:  126:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  126-block  0
+call    3 never executed
+    #####:  127:}
+    %%%%%:  127-block  0
+call    0 never executed
+    $$$$$:  127-block  1
+call    1 never executed
+        -:  128:
+function _ZN2UI8uiDeleteEv called 0 returned 0% blocks executed 0%
+    #####:  129:void UI::uiDelete() {
+    #####:  130:    cout<<"Stergeti o masina!\n";
+    %%%%%:  130-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  131:    string nr_i;
+    %%%%%:  131-block  0
+call    0 never executed
+    #####:  132:    cout<<"Numar de inmatriculare: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  133:    cin>>nr_i;
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  134:    try{
+    #####:  135:        srv.deleteCar(nr_i);
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  136:        cout<<"Masina a fost stearsa cu succes!\n";
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  137:    }
+    =====:  138:    catch (RepositoryException& re)
+    $$$$$:  138-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  138-block  1
+call    2 never executed
+        -:  139:    {
+    =====:  140:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  140-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  140-block  1
+call    6 never executed
+    $$$$$:  140-block  2
+call    7 never executed
+    $$$$$:  140-block  3
+    =====:  141:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  141-block  0
+call    3 never executed
+    #####:  142:}
+    %%%%%:  142-block  0
+call    0 never executed
+    $$$$$:  142-block  1
+call    1 never executed
+        -:  143:
+function _ZN2UI8uiModifyEv called 0 returned 0% blocks executed 0%
+    #####:  144:void UI::uiModify() {
+    #####:  145:    cout<<"Modificati numarul de inmatriculare al unei masini!\n";
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  146:    cout<<"Dati numarul de inmatriculare a masinii pe care doriti sa o modificati: ";
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  147:    string nr_i;
+    %%%%%:  147-block  0
+call    0 never executed
+    #####:  148:    cin>>nr_i;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  149:    cout<<"Dati noul numar de inmatriculare: ";
+    %%%%%:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  150:    string new_nr_i;
+    %%%%%:  150-block  0
+call    0 never executed
+    #####:  151:    cin>>new_nr_i;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  152:    try{
+    #####:  153:        srv.modifyCar(nr_i,new_nr_i);
+    %%%%%:  153-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  154:        cout<<"Masina a fost modificata cu succes!\n";
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  155:    }
+    =====:  156:    catch (RepositoryException& re)
+    $$$$$:  156-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  156-block  1
+call    3 never executed
+        -:  157:    {
+    =====:  158:        cout<<re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  158-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  158-block  1
+call    6 never executed
+    $$$$$:  158-block  2
+call    7 never executed
+    $$$$$:  158-block  3
+    =====:  159:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  159-block  0
+call    3 never executed
+    =====:  160:    catch (ValidationException& ve)
+    $$$$$:  160-block  0
+call    0 never executed
+        -:  161:    {
+    =====:  162:        cout<<ve.getErrorMessages();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  162-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  162-block  1
+call    6 never executed
+    $$$$$:  162-block  2
+call    7 never executed
+    $$$$$:  162-block  3
+    =====:  163:    }
+call    0 never executed
+    $$$$$:  163-block  0
+call    1 never executed
+    #####:  164:}
+    %%%%%:  164-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  164-block  1
+call    2 never executed
+    $$$$$:  164-block  2
+call    3 never executed
+        -:  165:
+function _ZN2UI15uiCreeazaRaportEv called 0 returned 0% blocks executed 0%
+    #####:  166:void UI::uiCreeazaRaport() {
+    #####:  167:    cout<<"Creati un raport folosind un dictionar!\n";
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  168:    cout<<"Raportul contine cate masini din fiecare model exista!\n";
+    %%%%%:  168-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  169:    map<string,DTO> raport=srv.creare_raport();
+    %%%%%:  169-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  170:    auto it= raport.begin();
+    %%%%%:  170-block  0
+call    0 never executed
+        -:  171:
+    #####:  172:    while(it!=raport.end())
+    %%%%%:  172-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  173:    {
+    #####:  174:        cout<<"Model: "<<it->first<<" -> numar masini din modelul respectiv:"<<it->second.get_count()<<endl;
+    %%%%%:  174-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  174-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  174-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  174-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:  174-block  4
+call   14 never executed
+branch 15 never executed
+branch 16 never executed
+    %%%%%:  174-block  5
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    #####:  175:        ++it;
+    %%%%%:  175-block  0
+call    0 never executed
+        -:  176:    }
+    #####:  177:}
+    %%%%%:  177-block  0
+call    0 never executed
+    $$$$$:  177-block  1
+call    1 never executed
+        -:  178:
+function _ZN2UI6uiUndoEv called 0 returned 0% blocks executed 0%
+    #####:  179:void UI::uiUndo() {
+        -:  180:    try{
+    #####:  181:        srv.undo();
+    %%%%%:  181-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  182:        cout<<"Undo realizat cu succes!\n";
+    %%%%%:  182-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  183:    }
+    =====:  184:    catch(RepositoryException& re){
+    $$$$$:  184-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  184-block  1
+call    2 never executed
+    =====:  185:        cout<<re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  185-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  185-block  1
+call    6 never executed
+    $$$$$:  185-block  2
+call    7 never executed
+    $$$$$:  185-block  3
+    =====:  186:    }
+call    0 never executed
+    $$$$$:  186-block  0
+call    1 never executed
+    #####:  187:}
+    %%%%%:  187-block  0
+        -:  188:
+function _ZN2UI14addDefaultCarsEv called 1 returned 100% blocks executed 42%
+        1:  189:void UI::addDefaultCars() {
+        1:  190:    srv.addCar("BV23ABC", "Ford", "Focus", "Hatchback");
+        1:  190-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  190-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  190-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  190-block  3
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  190-block  4
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  190-block  5
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  190-block  6
+call   27 never executed
+    $$$$$:  190-block  7
+    $$$$$:  190-block  8
+call   28 never executed
+    $$$$$:  190-block  9
+    $$$$$:  190-block 10
+call   29 never executed
+    $$$$$:  190-block 11
+    $$$$$:  190-block 12
+call   30 never executed
+    $$$$$:  190-block 13
+    $$$$$:  190-block 14
+call   31 never executed
+    $$$$$:  190-block 15
+    $$$$$:  190-block 16
+call   32 never executed
+    $$$$$:  190-block 17
+    $$$$$:  190-block 18
+call   33 never executed
+    $$$$$:  190-block 19
+    $$$$$:  190-block 20
+call   34 never executed
+    $$$$$:  190-block 21
+call   35 never executed
+        1:  191:    srv.addCar("TM03XYZ", "Toyota", "Corolla", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  191-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  191-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  191-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  191-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  191-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  191-block  5
+call   27 never executed
+    $$$$$:  191-block  6
+    $$$$$:  191-block  7
+call   28 never executed
+    $$$$$:  191-block  8
+    $$$$$:  191-block  9
+call   29 never executed
+    $$$$$:  191-block 10
+    $$$$$:  191-block 11
+call   30 never executed
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+call   31 never executed
+    $$$$$:  191-block 14
+    $$$$$:  191-block 15
+call   32 never executed
+    $$$$$:  191-block 16
+    $$$$$:  191-block 17
+call   33 never executed
+    $$$$$:  191-block 18
+    $$$$$:  191-block 19
+call   34 never executed
+    $$$$$:  191-block 20
+call   35 never executed
+        1:  192:    srv.addCar("IS12DEF", "Volkswagen", "Golf", "Hatchback");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  192-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  192-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  192-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  192-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  192-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  192-block  5
+call   27 never executed
+    $$$$$:  192-block  6
+    $$$$$:  192-block  7
+call   28 never executed
+    $$$$$:  192-block  8
+    $$$$$:  192-block  9
+call   29 never executed
+    $$$$$:  192-block 10
+    $$$$$:  192-block 11
+call   30 never executed
+    $$$$$:  192-block 12
+    $$$$$:  192-block 13
+call   31 never executed
+    $$$$$:  192-block 14
+    $$$$$:  192-block 15
+call   32 never executed
+    $$$$$:  192-block 16
+    $$$$$:  192-block 17
+call   33 never executed
+    $$$$$:  192-block 18
+    $$$$$:  192-block 19
+call   34 never executed
+    $$$$$:  192-block 20
+call   35 never executed
+        1:  193:    srv.addCar("CJ78GHI", "Audi", "A4", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  193-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  193-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  193-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  193-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  193-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  193-block  5
+call   27 never executed
+    $$$$$:  193-block  6
+    $$$$$:  193-block  7
+call   28 never executed
+    $$$$$:  193-block  8
+    $$$$$:  193-block  9
+call   29 never executed
+    $$$$$:  193-block 10
+    $$$$$:  193-block 11
+call   30 never executed
+    $$$$$:  193-block 12
+    $$$$$:  193-block 13
+call   31 never executed
+    $$$$$:  193-block 14
+    $$$$$:  193-block 15
+call   32 never executed
+    $$$$$:  193-block 16
+    $$$$$:  193-block 17
+call   33 never executed
+    $$$$$:  193-block 18
+    $$$$$:  193-block 19
+call   34 never executed
+    $$$$$:  193-block 20
+call   35 never executed
+        1:  194:    srv.addCar("NT45JKL", "BMW", "X5", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  194-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  194-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  194-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  194-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  194-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  194-block  5
+call   27 never executed
+    $$$$$:  194-block  6
+    $$$$$:  194-block  7
+call   28 never executed
+    $$$$$:  194-block  8
+    $$$$$:  194-block  9
+call   29 never executed
+    $$$$$:  194-block 10
+    $$$$$:  194-block 11
+call   30 never executed
+    $$$$$:  194-block 12
+    $$$$$:  194-block 13
+call   31 never executed
+    $$$$$:  194-block 14
+    $$$$$:  194-block 15
+call   32 never executed
+    $$$$$:  194-block 16
+    $$$$$:  194-block 17
+call   33 never executed
+    $$$$$:  194-block 18
+    $$$$$:  194-block 19
+call   34 never executed
+    $$$$$:  194-block 20
+call   35 never executed
+        1:  195:    srv.addCar("VL56MNO", "Mercedes-Benz", "C-Class", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  195-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  195-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  195-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  195-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  195-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  195-block  5
+call   27 never executed
+    $$$$$:  195-block  6
+    $$$$$:  195-block  7
+call   28 never executed
+    $$$$$:  195-block  8
+    $$$$$:  195-block  9
+call   29 never executed
+    $$$$$:  195-block 10
+    $$$$$:  195-block 11
+call   30 never executed
+    $$$$$:  195-block 12
+    $$$$$:  195-block 13
+call   31 never executed
+    $$$$$:  195-block 14
+    $$$$$:  195-block 15
+call   32 never executed
+    $$$$$:  195-block 16
+    $$$$$:  195-block 17
+call   33 never executed
+    $$$$$:  195-block 18
+    $$$$$:  195-block 19
+call   34 never executed
+    $$$$$:  195-block 20
+call   35 never executed
+        1:  196:    srv.addCar("HD67PQR", "Honda", "Civic", "Hatchback");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  196-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  196-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  196-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  196-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  196-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  196-block  5
+call   27 never executed
+    $$$$$:  196-block  6
+    $$$$$:  196-block  7
+call   28 never executed
+    $$$$$:  196-block  8
+    $$$$$:  196-block  9
+call   29 never executed
+    $$$$$:  196-block 10
+    $$$$$:  196-block 11
+call   30 never executed
+    $$$$$:  196-block 12
+    $$$$$:  196-block 13
+call   31 never executed
+    $$$$$:  196-block 14
+    $$$$$:  196-block 15
+call   32 never executed
+    $$$$$:  196-block 16
+    $$$$$:  196-block 17
+call   33 never executed
+    $$$$$:  196-block 18
+    $$$$$:  196-block 19
+call   34 never executed
+    $$$$$:  196-block 20
+call   35 never executed
+        1:  197:    srv.addCar("PH09ABC", "Audi", "A3", "Hatchback");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  197-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  197-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  197-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  197-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  197-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  197-block  5
+call   27 never executed
+    $$$$$:  197-block  6
+    $$$$$:  197-block  7
+call   28 never executed
+    $$$$$:  197-block  8
+    $$$$$:  197-block  9
+call   29 never executed
+    $$$$$:  197-block 10
+    $$$$$:  197-block 11
+call   30 never executed
+    $$$$$:  197-block 12
+    $$$$$:  197-block 13
+call   31 never executed
+    $$$$$:  197-block 14
+    $$$$$:  197-block 15
+call   32 never executed
+    $$$$$:  197-block 16
+    $$$$$:  197-block 17
+call   33 never executed
+    $$$$$:  197-block 18
+    $$$$$:  197-block 19
+call   34 never executed
+    $$$$$:  197-block 20
+call   35 never executed
+        1:  198:    srv.addCar("IS34DEF", "Audi", "Q5", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  198-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  198-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  198-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  198-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  198-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  198-block  5
+call   27 never executed
+    $$$$$:  198-block  6
+    $$$$$:  198-block  7
+call   28 never executed
+    $$$$$:  198-block  8
+    $$$$$:  198-block  9
+call   29 never executed
+    $$$$$:  198-block 10
+    $$$$$:  198-block 11
+call   30 never executed
+    $$$$$:  198-block 12
+    $$$$$:  198-block 13
+call   31 never executed
+    $$$$$:  198-block 14
+    $$$$$:  198-block 15
+call   32 never executed
+    $$$$$:  198-block 16
+    $$$$$:  198-block 17
+call   33 never executed
+    $$$$$:  198-block 18
+    $$$$$:  198-block 19
+call   34 never executed
+    $$$$$:  198-block 20
+call   35 never executed
+        1:  199:    srv.addCar("CJ34ABC", "Audi", "Q5", "SUV");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  199-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  199-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  199-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  199-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  199-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  199-block  5
+call   27 never executed
+    $$$$$:  199-block  6
+    $$$$$:  199-block  7
+call   28 never executed
+    $$$$$:  199-block  8
+    $$$$$:  199-block  9
+call   29 never executed
+    $$$$$:  199-block 10
+    $$$$$:  199-block 11
+call   30 never executed
+    $$$$$:  199-block 12
+    $$$$$:  199-block 13
+call   31 never executed
+    $$$$$:  199-block 14
+    $$$$$:  199-block 15
+call   32 never executed
+    $$$$$:  199-block 16
+    $$$$$:  199-block 17
+call   33 never executed
+    $$$$$:  199-block 18
+    $$$$$:  199-block 19
+call   34 never executed
+    $$$$$:  199-block 20
+call   35 never executed
+        1:  200:    srv.addCar("SM48MNO", "Mercedes-Benz", "C-Class", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  200-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  200-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  200-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  200-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  200-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  200-block  5
+call   27 never executed
+    $$$$$:  200-block  6
+    $$$$$:  200-block  7
+call   28 never executed
+    $$$$$:  200-block  8
+    $$$$$:  200-block  9
+call   29 never executed
+    $$$$$:  200-block 10
+    $$$$$:  200-block 11
+call   30 never executed
+    $$$$$:  200-block 12
+    $$$$$:  200-block 13
+call   31 never executed
+    $$$$$:  200-block 14
+    $$$$$:  200-block 15
+call   32 never executed
+    $$$$$:  200-block 16
+    $$$$$:  200-block 17
+call   33 never executed
+    $$$$$:  200-block 18
+    $$$$$:  200-block 19
+call   34 never executed
+    $$$$$:  200-block 20
+call   35 never executed
+        1:  201:    srv.addCar("MM56MNO", "Mercedes-Benz", "C-Class", "Sedan");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  201-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  201-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  201-block  2
+call   12 returned 1
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  201-block  3
+call   16 returned 1
+branch 17 taken 1 (fallthrough)
+branch 18 taken 0 (throw)
+        1:  201-block  4
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+call   25 returned 1
+call   26 returned 1
+    $$$$$:  201-block  5
+call   27 never executed
+    $$$$$:  201-block  6
+    $$$$$:  201-block  7
+call   28 never executed
+    $$$$$:  201-block  8
+    $$$$$:  201-block  9
+call   29 never executed
+    $$$$$:  201-block 10
+    $$$$$:  201-block 11
+call   30 never executed
+    $$$$$:  201-block 12
+    $$$$$:  201-block 13
+call   31 never executed
+    $$$$$:  201-block 14
+    $$$$$:  201-block 15
+call   32 never executed
+    $$$$$:  201-block 16
+    $$$$$:  201-block 17
+call   33 never executed
+    $$$$$:  201-block 18
+    $$$$$:  201-block 19
+call   34 never executed
+        1:  202:}
+        -:  203:
+function _ZN2UI21printListaDeLucruMenuEv called 0 returned 0% blocks executed 0%
+    #####:  204:void UI::printListaDeLucruMenu() {
+    #####:  205:    cout<<"-MENIU LISTA DE LUCRU-"<<endl;
+    %%%%%:  205-block  0
+call    0 never executed
+call    1 never executed
+    #####:  206:    cout<<"1. Programarea unei masini la spalatorie."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  207:    cout<<"2. Trimiterea unor masini random la spalatorie."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  208:    cout<<"3. Golirea listei de lucru."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  209:    cout<<"4. Afisarea listei de lucru."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  210:    cout<<"5. Export CVS."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  211:    cout<<"6. Export HTML."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  212:    cout<<"0. Inapoi la meniul principal."<<endl;
+call    0 never executed
+call    1 never executed
+    #####:  213:}
+        -:  214:
+function _ZN2UI17uiAddListaDeLucruEv called 0 returned 0% blocks executed 0%
+    #####:  215:void UI::uiAddListaDeLucru() {
+    #####:  216:    cout<<"Programarea unei masini la spalatorie."<<endl;
+    %%%%%:  216-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  216-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  217:    string nr_i;
+    %%%%%:  217-block  0
+call    0 never executed
+    #####:  218:    cout<<"Dati numarul de inmatriculare:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  219:    cin>>nr_i;
+    %%%%%:  219-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  220:    try{
+    #####:  221:        srv.addListaDeLucru(nr_i);
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  222:        cout<<"Masina adaugata cu succes!"<<endl;
+    %%%%%:  222-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  222-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  223:    }
+    =====:  224:    catch (RepositoryException& re){
+    $$$$$:  224-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  224-block  1
+call    2 never executed
+    =====:  225:        cout<<re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  225-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  225-block  1
+call    6 never executed
+    $$$$$:  225-block  2
+call    7 never executed
+    $$$$$:  225-block  3
+    =====:  226:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  226-block  0
+call    3 never executed
+    #####:  227:}
+    %%%%%:  227-block  0
+call    0 never executed
+    $$$$$:  227-block  1
+call    1 never executed
+        -:  228:
+function _ZN2UI25uiAddRandomToListaDeLucruEv called 0 returned 0% blocks executed 0%
+    #####:  229:void UI::uiAddRandomToListaDeLucru() {
+        -:  230:    int howMany;
+    #####:  231:    cout<<"Cate masini doriti sa trimiteti la spalat?";
+    %%%%%:  231-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  232:    cin>>howMany;
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  233:
+        -:  234:    try{
+    #####:  235:        int howManyAdded = srv.addRandomToListaDeLucru(howMany);
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  236:        cout<<"S-au adaugat "<<howManyAdded<<" masini.\n";
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  236-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  236-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:  237:    }
+    =====:  238:    catch(RepositoryException& re){
+    $$$$$:  238-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  238-block  1
+call    2 never executed
+    =====:  239:        cout<< re.getErrorMessage();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  239-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  239-block  1
+call    6 never executed
+    $$$$$:  239-block  2
+call    7 never executed
+    $$$$$:  239-block  3
+    =====:  240:    }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  240-block  0
+call    3 never executed
+    #####:  241:}
+    %%%%%:  241-block  0
+        -:  242:
+function _ZN2UI19uiEmptyListaDeLucruEv called 0 returned 0% blocks executed 0%
+    #####:  243:void UI::uiEmptyListaDeLucru() {
+    #####:  244:    srv.emptyListaDeLucru();
+    %%%%%:  244-block  0
+call    0 never executed
+    #####:  245:    cout<<"S-au sters toate masinile din lista de lucru curenta!\n";
+call    0 never executed
+    #####:  246:}
+        -:  247:
+        -:  248:template<typename T>
+function _Z6myreadINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_PKc called 0 returned 0% blocks executed 0%
+    #####:  249:T myread(const char* msg){
+    #####:  250:    T cmd{};
+    %%%%%:  250-block  0
+call    0 never executed
+    #####:  251:    while(true){
+    %%%%%:  251-block  0
+    #####:  252:        cout<<msg;
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  253:        cin>>cmd;
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  254:        const bool fail = cin.fail();
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  255:        cin.clear(); // resetez failbit
+    %%%%%:  255-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  256:        const auto &aux = cin.ignore(1000,'\n');
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  257:        if(!fail && aux.gcount() <= 1){
+    %%%%%:  257-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  257-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  257-block  2
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  257-block  3
+    %%%%%:  257-block  4
+    %%%%%:  257-block  5
+branch  7 never executed
+branch  8 never executed
+    #####:  258:            break; // am reusit sa citesc un numar
+    %%%%%:  258-block  0
+        -:  259:        }
+        -:  260:    }
+    #####:  261:    return cmd;
+    %%%%%:  261-block  0
+    %%%%%:  261-block  1
+    =====:  262:}
+    $$$$$:  262-block  0
+call    0 never executed
+        -:  263:
+function _ZN2UI14uiListaDeLucruEv called 0 returned 0% blocks executed 0%
+    #####:  264:void UI::uiListaDeLucru() {
+    #####:  265:    int running = 1;
+        -:  266:    int cmd;
+    #####:  267:    while(running)
+    %%%%%:  267-block  0
+    %%%%%:  267-block  1
+branch  0 never executed
+branch  1 never executed
+        -:  268:    {
+    #####:  269:        printListaDeLucruMenu();
+    %%%%%:  269-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  270:        cout<<">>>";
+    %%%%%:  270-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  271:        cin>>cmd;
+    %%%%%:  271-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  272:        switch (cmd) {
+    %%%%%:  272-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+    #####:  273:            case 1:
+    #####:  274:                uiAddListaDeLucru();
+    %%%%%:  274-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  275:                break;
+    %%%%%:  275-block  0
+    #####:  276:            case 2:
+    #####:  277:                uiAddRandomToListaDeLucru();
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:                break;
+    %%%%%:  278-block  0
+    #####:  279:            case 3:
+    #####:  280:                uiEmptyListaDeLucru();
+    %%%%%:  280-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  281:                break;
+    %%%%%:  281-block  0
+    #####:  282:            case 4:
+    #####:  283:                printCars(srv.getListaDeLucru());
+    %%%%%:  283-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  283-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  284:                break;
+    %%%%%:  284-block  0
+    #####:  285:            case 5:
+    #####:  286:                srv.exportaListaDeLucruCVS(myread<string>("CVS file:"));
+    %%%%%:  286-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  286-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  286-block  2
+call    6 never executed
+    $$$$$:  286-block  3
+call    7 never executed
+    $$$$$:  286-block  4
+    #####:  287:                break;
+    #####:  288:            case 6:
+    #####:  289:                srv.exportaListaDeLucruHTML(myread<string>("HTML file:"));
+    %%%%%:  289-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  289-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  289-block  2
+call    6 never executed
+    $$$$$:  289-block  3
+call    7 never executed
+    $$$$$:  289-block  4
+    #####:  290:                break;
+    #####:  291:            case 0:
+    #####:  292:                running=0;
+    #####:  293:                cout<<"Revenire meniu principal! ->"<<endl;
+    %%%%%:  293-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  293-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  294:                break;
+    %%%%%:  294-block  0
+    #####:  295:            default:
+    #####:  296:                cout<<"Optiune invalida! Reincercati!\n";
+    %%%%%:  296-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  297:                break;
+    %%%%%:  297-block  0
+        -:  298:        }
+        -:  299:    }
+    #####:  300:}
+    %%%%%:  300-block  0
+        -:  301:
+function _ZN2UI3runEv called 1 returned 100% blocks executed 29%
+        1:  302:void UI::run(){
+        1:  303:    int running = 1;
+        -:  304:    int cmd;
+        1:  305:    addDefaultCars();
+        1:  305-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  306:    while(running)
+        1:  306-block  0
+        2:  306-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        -:  307:    {
+        1:  308:        printMenu();
+        1:  308-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  309:        cout<<">>>";
+        1:  309-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  310:        cin>>cmd;
+        1:  310-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  311:        switch(cmd)
+        1:  311-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 0
+branch  9 taken 0
+branch 10 taken 1
+branch 11 taken 0
+        -:  312:        {
+    #####:  313:            case 1:
+    #####:  314:                uiAdd();
+    %%%%%:  314-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  315:                break;
+    %%%%%:  315-block  0
+    #####:  316:            case 2:
+    #####:  317:                printCars(srv.getAllCars());
+    %%%%%:  317-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  317-block  1
+call    4 never executed
+    $$$$$:  317-block  2
+call    5 never executed
+    $$$$$:  317-block  3
+    #####:  318:                break;
+    #####:  319:            case 3:
+    #####:  320:                uiFilter();
+    %%%%%:  320-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  321:                break;
+    %%%%%:  321-block  0
+    #####:  322:            case 4:
+    #####:  323:                uiSort();
+    %%%%%:  323-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  324:                break;
+    %%%%%:  324-block  0
+    #####:  325:            case 5:
+    #####:  326:                uiFind();
+    %%%%%:  326-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  327:                break;
+    %%%%%:  327-block  0
+    #####:  328:            case 6:
+    #####:  329:                uiDelete();
+    %%%%%:  329-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  330:                break;
+    %%%%%:  330-block  0
+    #####:  331:            case 7:
+    #####:  332:                uiModify();
+    %%%%%:  332-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  333:                break;
+    %%%%%:  333-block  0
+    #####:  334:            case 8:
+    #####:  335:                uiListaDeLucru();
+    %%%%%:  335-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  336:                break;
+    %%%%%:  336-block  0
+    #####:  337:            case 9:
+    #####:  338:                uiCreeazaRaport();
+    %%%%%:  338-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  339:                break;
+    %%%%%:  339-block  0
+    #####:  340:            case 10:
+    #####:  341:                uiUndo();
+    %%%%%:  341-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  342:                break;
+    %%%%%:  342-block  0
+        1:  343:            case 0:
+        1:  344:                running = 0;
+        1:  345:                cout<<"La revedere!!\n";
+        1:  345-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  346:                break;
+        1:  346-block  0
+    #####:  347:            default:
+    #####:  348:                cout<<"Optiune invalida! Reincercati!\n";
+    %%%%%:  348-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  349:                break;
+    %%%%%:  349-block  0
+        -:  350:        }
+        -:  351:    }
+        1:  352:}
+        1:  352-block  0

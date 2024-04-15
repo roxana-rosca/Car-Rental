@@ -1,0 +1,203 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/Service.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Repository.h"
+        -:    3:#include "Validator.h"
+        -:    4:#include "ListaDeLucru.h"
+        -:    5:#include <functional>
+        -:    6:#include <map>
+        -:    7:#include "DTO.h"
+        -:    8:#include "Export.h"
+        -:    9:#include "Undo.h"
+        -:   10:#include <memory>
+        -:   11:
+        -:   12:using std::function;
+        -:   13:using std::unique_ptr;
+        -:   14:
+        -:   15:class Service {
+        -:   16:private:
+        -:   17:    //Repository& repo;
+        -:   18:    AbstractRepo& repo;
+        -:   19:    Validator& validator;
+        -:   20:
+        -:   21:    ListaDeLucru deSpalatCurent;
+        -:   22:
+        -:   23:    // pointer la ActiuneUndo pentru un apel polimorfic
+        -:   24:    std::vector<unique_ptr<ActiuneUndo>> undoActions;
+        -:   25:
+        -:   26:    /*
+        -:   27:     * Filtreaza lista de masini dupa un anumit criteriu
+        -:   28:     *
+        -:   29:     * @param fct: functia dupa care se filtreaza lista de masini
+        -:   30:     * @return: lista cu masinile care indeplinesc criteriul dat
+        -:   31:     */
+        -:   32:    vector<Car> filter(const function<bool(const Car&)>& fct);
+        -:   33:
+        -:   34:    /*
+        -:   35:     * Functie de sortare proprie
+        -:   36:     *
+        -:   37:     * @param maiMicF: functia de comparare folosita pentru sortare
+        -:   38:     * @return: lista cu masini sortate dupa criteriul dat (vector cu elemente de tip Car)
+        -:   39:     */
+        -:   40:    vector<Car> generalSort(bool(*maiMicF)(const Car&, const Car&));
+        -:   41:
+        -:   42:public:
+        -:   43:    // Constructor
+        -:   44:    Service(AbstractRepo& car_repo, Validator& car_validator): repo{car_repo}, validator{car_validator}{};
+        -:   45:
+        -:   46:    // Constructor de copiere
+        -:   47:    // nu avem nevoie, in aplicatie va exista un singur service
+        -:   48:    Service(const Service& ot) = delete;
+        -:   49:
+        -:   50:    /*
+        -:   51:     * Adaugare masina cu datele date
+        -:   52:     * @param nr_i: numarul de inmatriculare a masinii care se adauga (string)
+        -:   53:     * @param p: producatorul masinii care se adauga (string)
+        -:   54:     * @param model: modelul masinii care se adauga (string)
+        -:   55:     * @param tip: tipul masinii care se adauga (string)
+        -:   56:     *
+        -:   57:     * @throws:
+        -:   58:     *  RepositoryException daca mai exista o masina cu numarul de inmatriculare dat
+        -:   59:     *  ValidationException daca masina nu este valida
+        -:   60:     */
+        -:   61:    void addCar(string nr_i, string p, string model, string tip);
+        -:   62:
+        -:   63:    /*
+        -:   64:     * Returneaza un vector cu toate masinile disponibile
+        -:   65:     *
+        -:   66:     * @return: lista cu toate masinile disponibile (vector cu obiecte de tip Car)
+        -:   67:     */
+function _ZN7Service10getAllCarsEv called 15 returned 100% blocks executed 100%
+       15:   68:    vector<Car> getAllCars() noexcept{
+       15:   69:        return this->repo.getAllCars();
+       15:   69-block  0
+call    0 returned 15
+        -:   70:    }
+        -:   71:
+        -:   72:    /*
+        -:   73:     * Filtrare dupa producator
+        -:   74:     * Returneaza o lista de masini cu producatorul dat
+        -:   75:     *
+        -:   76:     * @param p: producatorul dupa care se filtreaza
+        -:   77:     * @return: lista cu masinile care au producatorul dat (vector cu elemente de tip Car)
+        -:   78:     */
+        -:   79:    vector<Car> filtrareProducator(const string& p);
+        -:   80:
+        -:   81:    /*
+        -:   82:     * Filtrare dupa tip
+        -:   83:     * Returneaza o lista de masini cu tipul dat
+        -:   84:     *
+        -:   85:     * @param tip: tipul masinii dupa care se filtreaza
+        -:   86:     * @return: lista cu masinile care au tipul dat (vector cu elemente de tip Car)
+        -:   87:     */
+        -:   88:    vector<Car> filtrareTip(const string& tip);
+        -:   89:
+        -:   90:    /*
+        -:   91:     * Sortare dupa numar de inmatriculare
+        -:   92:     *
+        -:   93:     * @return: lista de masini sortate dupa numarul de inmatriculare
+        -:   94:     */
+        -:   95:    vector<Car> sortByPlateNumber();
+        -:   96:
+        -:   97:    /*
+        -:   98:     * Sortare dupa tipul masinii
+        -:   99:     *
+        -:  100:     * @return: lista cu masinile sortate dupa tip
+        -:  101:     */
+        -:  102:    vector<Car> sortByType();
+        -:  103:
+        -:  104:    /*
+        -:  105:     * Sortare dupa producator + model masina
+        -:  106:     *
+        -:  107:     * @return: lista cu masini sortate dupa producator + model
+        -:  108:     */
+        -:  109:    vector<Car> sortByCompanyAndModel();
+        -:  110:
+        -:  111:    /*
+        -:  112:     * Cautare masina dupa un numar de inmatriculare
+        -:  113:     *
+        -:  114:     * @return: masina cu numarul de inmatriculare dat daca exista
+        -:  115:     * @throws: RepositoryException daca masina nu exista
+        -:  116:     */
+        -:  117:    Car findCar(const string& nr_i);
+        -:  118:
+        -:  119:    /*
+        -:  120:     * Sterge masina cu numarul de inmatriculare dat
+        -:  121:     *
+        -:  122:     * @return: 1, daca masina a fost stearsa cu succes
+        -:  123:     * @throws: RepositoryException daca nu exista o masina cu numarul de inmatriculare dat in lista
+        -:  124:     */
+        -:  125:    int deleteCar(const string& nr_i);
+        -:  126:
+        -:  127:    /*
+        -:  128:     * Modifica numarul de inmatriculare al unei masini
+        -:  129:     *
+        -:  130:     * @return: daca masina a fost modificata cu succes
+        -:  131:     * @throws: ValidationException daca numarul de inmatriculare nou nu este valid
+        -:  132:     * @throws: RepositoryException daca nu exista o masina cu numarul de inmatriculare dat
+        -:  133:     */
+        -:  134:    int modifyCar(const string& nr_i, const string& new_nr_i);
+        -:  135:
+        -:  136:    /*
+        -:  137:     * Adauga o masina cu numarul de inmatriculare dat in lista de lucru
+        -:  138:     *
+        -:  139:     * @param nr_i: numarul de inmatriculare a masinii care se adauga (string)
+        -:  140:     *
+        -:  141:     * post: masina de adauga in lista de lucru
+        -:  142:     * @throws: RepositoryException daca nu exista o masina cu numarul de inmatriculare dat
+        -:  143:     */
+        -:  144:    void addListaDeLucru(string& nr_i);
+        -:  145:
+        -:  146:    /*
+        -:  147:     * Returneaza un vector cu toate masinile din lista de lucru
+        -:  148:     */
+        -:  149:    const vector<Car>& getListaDeLucru();
+        -:  150:
+        -:  151:    /*
+        -:  152:     * Adauga masini random in lista de lucru.
+        -:  153:     *
+        -:  154:     * @param howMany: cate masini se adauga (int)
+        -:  155:     *
+        -:  156:     * @return: numarul de masini adaugate in lista de lucru
+        -:  157:     * post: se adauga masinile in lista de lucru
+        -:  158:     */
+        -:  159:    int addRandomToListaDeLucru(int howMany);
+        -:  160:
+        -:  161:    /*
+        -:  162:     * Elimina toate masinile din lista de lucru.
+        -:  163:     *
+        -:  164:     * post: lista de lucru goala
+        -:  165:     */
+        -:  166:    void emptyListaDeLucru();
+        -:  167:
+        -:  168:    /*
+        -:  169:     * Creeaza un raport folosind un dictionar
+        -:  170:     * (cate masini din fiecare model exista)
+        -:  171:     * Dictionarul are structura:
+        -:  172:     * map<model, DTO>
+        -:  173:     */
+        -:  174:    map<string , DTO> creare_raport();
+        -:  175:
+        -:  176:
+        -:  177:    /*
+        -:  178:     * Exporta lista de lucru intr-un fisier de tip CVS
+        -:  179:     */
+        -:  180:    void exportaListaDeLucruCVS(const string& fName) const;
+        -:  181:
+        -:  182:    /*
+        -:  183:     * Exporta lista de lucru intr-un fisier de tip HTML
+        -:  184:     */
+        -:  185:    void exportaListaDeLucruHTML(const string& fName) const;
+        -:  186:
+        -:  187:
+        -:  188:    /*
+        -:  189:     * Realizeaza undo la operatia de adaugare, stergere, respectiv modificare.
+        -:  190:     */
+        -:  191:    void undo();
+        -:  192:};
+        -:  193:
+        -:  194:void testeService();
+        -:  195:
+        -:  196:

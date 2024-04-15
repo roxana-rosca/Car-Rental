@@ -1,0 +1,55 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/ListaDeLucru.h
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Car.h"
+        -:    3:#include <vector>
+        -:    4:#include <algorithm>
+        -:    5:#include <random>
+        -:    6:#include <chrono>
+        -:    7:
+        -:    8:using std::vector;
+        -:    9:
+        -:   10:class ListaDeLucru {
+        -:   11:private:
+        -:   12:    vector<Car> deSpalat;
+        -:   13:public:
+function _ZN12ListaDeLucruC1Ev called 0 returned 0% blocks executed 0%
+    #####:   14:    ListaDeLucru()=default;
+    %%%%%:   14-block  0
+call    0 never executed
+        -:   15:
+        -:   16:    /*
+        -:   17:     * Adauga o masina in lista de lucru
+        -:   18:     * @param c: masina care se adauga (Car)
+        -:   19:     *
+        -:   20:     * post: masina va fi adaugata in lista de lucru
+        -:   21:     */
+        -:   22:    void addCarToListaDeLucru(const Car& c);
+        -:   23:
+        -:   24:    /*
+        -:   25:     * Elimina toate masinile din lista de lucru
+        -:   26:     *
+        -:   27:     * post: lista de lucru este goala
+        -:   28:     */
+        -:   29:    void emptyListaDeLucru();
+        -:   30:
+        -:   31:    /*
+        -:   32:     * Adauga un numar random de masini in lista de lucru
+        -:   33:     *
+        -:   34:     * @param originalCars: masinile din care se alege (vector<Car>)
+        -:   35:     * @param howMany: cate melodii se adauga (int)
+        -:   36:     *
+        -:   37:     * post: masinile sunt adaugate in lista de lucru curenta
+        -:   38:     */
+        -:   39:    void addRandomCars(vector<Car> originalCars, int howMany);
+        -:   40:
+        -:   41:    /*
+        -:   42:     * Returneaza un vector care contine toate masinile din lista de lucru
+        -:   43:     */
+        -:   44:    const vector<Car> & getAlldeSpalat() const;
+        -:   45:};
+        -:   46:
+        -:   47:
+        -:   48:

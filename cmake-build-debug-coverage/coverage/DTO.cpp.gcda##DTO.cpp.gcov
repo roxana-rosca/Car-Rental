@@ -1,0 +1,18 @@
+        -:    0:Source:C:/Users/roxan/CLionProjects/oop/inchiriere_masini/DTO.cpp
+        -:    0:Graph:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\DTO.cpp.gcno
+        -:    0:Data:C:\Users\roxan\CLionProjects\oop\inchiriere_masini\cmake-build-debug-coverage\CMakeFiles\inchiriere_masini.dir\DTO.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "DTO.h"
+        -:    2:
+        -:    3:#include <utility>
+        -:    4:
+function _ZNK3DTO9get_countEv called 1 returned 100% blocks executed 100%
+        1:    5:int DTO::get_count() const {
+        1:    6:    return this->count;
+        1:    6-block  0
+        -:    7:}
+        -:    8:
+function _ZN3DTO9inc_countEv called 1 returned 100% blocks executed 100%
+        1:    9:void DTO::inc_count() {
+        1:   10:    this->count++;
+        1:   11:}
